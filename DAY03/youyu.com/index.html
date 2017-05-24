@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>shoppingmall &lt; yuyu.com</title>
+  <link rel="stylesheet" href="./css/modules/init.css">
+  <link rel="stylesheet" href="./css/modules/grid.css">
+  <style>
+    .box-wrapper {
+
+    }
+    .box {
+      /*height: 100px;*/
+      color: #333;
+      text-align: center;
+      line-height: 126px;
+    }
+    .gap {
+      margin-bottom: 21px;
+    }
+  </style>
+</head>
+<body class="show-grid">
+
+  <div class="container">
+    <div class="row gap">
+      <div class="header-logo box col is-2">
+        <img class="logo" src="images/header/logo.svg" alt="youyu 로고 이미지" titl="youyu">        
+      </div>
+      <div class="header-search col is-4 is-offset-2">
+        <form>
+          <fieldset>
+            <legend>검색영역</legend>
+            <input class="input" type="search">
+            <a href="#">검색</a>
+          </fieldset>
+        </form>
+      </div>
+      <div class="header-info">
+        <a class="info-1 col is-1" href="#">회원가입</a>
+        <a class="info-1 col is-1" href="#">로그인</a>
+      </div>
+      <div class="col is-8">
+        <div class="box-wrapper row is-nesting">
+          <div class="box col is-3 is-offset-1">
+            
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="box col is-4">column 1/3</div>
+      <div class="box col is-4">column 1/3</div>
+      <div class="box col is-4">column 1/3</div>
+    </div>
+  </div>
+
+<script src="./js/toggleGrid.js"></script>
+</body>
+</html>
