@@ -65,9 +65,9 @@
   // Nesting Row Module
   // 중첩 로우(행) 모듈
   // .row.is-nesting
-  &.is-nesting {
-    & > :first-child { margin-left: 0; }
-    & > :last-child { margin-right: 0; }
+  & .is-nesting {
+    & :first-child { margin-left: 0; }
+    & :last-child { margin-right: 0; }
   }
 }
 
@@ -108,26 +108,3 @@
 
 
 
-// header 영역
-
-.header-logo{
-  margin-top: 42px;
-  width: 170px;
-}
-.logo{
-  background: url(images/header/logo.svg) no-repeat;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-.header-search{
-  margin-top: 42px;
-}
-.input{
-  width: ($column-width * 4) + ($gutter-width * 5);
-  height: 25px;
-}
-.header-info a{
-  text-decoration: none;
-  color: #991717;
-}

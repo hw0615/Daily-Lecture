@@ -13,7 +13,7 @@ $leading: $base-font-size * $leading-scale;
 // 그리드 시스템 가이드라인 토글 클래스
 $toggle-classname: 'show-grid';
 // 그리드 시스템 가이드라인 높이
-$guide-height: 100vh;
+$guide-height: 100%;
 // 컬럼의 총 개수
 $columns: 12;
 // 컬럼 폭

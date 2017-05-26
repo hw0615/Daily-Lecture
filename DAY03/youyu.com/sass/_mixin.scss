@@ -1,0 +1,17 @@
+@mixin hidden-text{
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+}
+@mixin clearfix{
+    &::after{
+    content: "";
+    display: block;
+    clear: both;
+    }
+    
+}

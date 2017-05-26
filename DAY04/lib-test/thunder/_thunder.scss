@@ -1,0 +1,15 @@
+/// 디멘션 설정 헬퍼 믹스인
+/// @access  public
+/// @author  thunderman
+/// @param   {Number | auto | Null} - width, height 속성 값
+/// @content width, height를 빠르게 작성한다.
+/// @example sass
+///     .demo
+///         +size(920px, 330px)
+///
+///     .demo
+///         @include size(920px) // 2번째 인자 생략 시, height는 미설정
+@mixin size($width: auto, $height: null){
+    width: $width;
+    height: $height;
+}

@@ -1,0 +1,29 @@
+@import '_settings.scss';
+@import '_mixin';
+// filter 영역
+.nav-filter{
+  position: relative;  
+}
+.filter-set{
+  background: #f0f0f0;
+  border-top: 3px solid #bd1d31;
+  border-bottom: 1px solid #ddd;
+  height: 42px;
+  p{
+  margin: 0;
+  text-align: center;
+  line-height: 3;
+  color: #991717;
+  }
+  .filter-image{
+    position: absolute;
+    top: 17px;
+    left: 565px;
+    width: 15px;
+    height: 13px;
+    background-image: url('../../images/icons/icons.svg');
+    background-size: 19px auto;
+    background-repeat: no-repeat;
+    background-position: 0 -58px; 
+  }
+}

@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+}
+
+/*
+ * Susy Global Settings
+ * http://susydocs.oddbird.net/en/latest/settings/#global-defaults
+ */
+.page {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+}
+
+.page:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+head {
+  display: block;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 999;
+  color: #333;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+head:before {
+  content: "|||";
+  display: block;
+  padding: 5px 10px;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+head:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: red;
+}
+
+head:hover ~ .page,
+head:hover ~ body .page {
+  position: relative;
+}
+
+head:hover ~ .page:before,
+head:hover ~ body .page:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, transparent 80%), linear-gradient(to bottom, #000 1px, transparent 1px);
+  background-size: 26.31579%, 100% 10px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
+}
+
+.box {
+  height: 2.625rem;
+  height: 2.625rem;
+}
+
+.box.is-1 {
+  width: 30%;
+  float: left;
+  margin-right: 5.26316%;
+  background-color: hsla(0,0%,20%,0.4);
+}
+
+.box.is-2 {
+  width: 30%;
+  float: left;
+  margin-right: 5.26316%;
+  background-color: hsla(0,100%,50%,0.4);
+}
+
+/*# sourceMappingURL=../map/susy-grid.css.map */

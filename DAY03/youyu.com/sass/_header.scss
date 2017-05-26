@@ -1,0 +1,106 @@
+@import '_settings.scss';
+@import '_mixin';
+// header 영역
+.container{
+  padding-top: 42px;
+}
+.header-logo{
+  margin-top: 0;
+  margin-bottom: 0;  
+}
+.logo-image{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+fieldset{
+      border: 0 none; 
+      margin: 0;
+      padding: 0;
+      position: relative;       
+}
+legend{
+  @include hidden-text;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.input{
+  width: 100%;
+  height: 41px;
+  border: 2px solid #333;
+}
+.header-search{
+  width: 380px;
+  position: relative;  
+}
+.header-search.is-offset-1{
+  margin-left: 80px;
+}
+[class*="icon-"] {
+  
+}
+.icon-search-wrapper{
+  width: 20px;
+  height: 20px;
+}
+.icon-search{
+  position: absolute;
+  top: 21px;
+  right: 7px;
+  padding: 11.5px 15px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0px;  
+  background-image: url('../../images/icons/icons.svg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 -210.6px; 
+  // width: 20px;
+  height: 14px;
+}
+.header-info a{
+  text-decoration: none;
+  color: #991717;
+  padding: 5px 15px;
+  border: 1px solid transparent;  
+}
+.header-info.is-offset-2{
+  margin-left: 170px;
+}
+.info-1:hover, .info-2:hover{
+  border: 1px solid #991717;
+  border-radius: 3px;
+}
+.nav-list{
+  float: left;
+  margin: 0;
+  padding: 0;
+  li{
+  font-size: 14px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 16.4px; 
+  }
+}
+.nav-list a{
+  color: #333;
+  padding: 5px 15px;
+}
+.nav-list li:not(:first-child) a:hover{
+  color: #991717;
+  border-bottom: 2px solid #991717;
+}
+.nav-list li:first-child a{
+  color: #fff;
+  background: #bd1d31;
+  border-radius: 3px;
+  padding-left: 17px;
+}
+.nav-wrapper{
+  margin-top: 20px;
+}

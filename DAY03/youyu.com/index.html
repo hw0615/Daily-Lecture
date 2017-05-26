@@ -7,15 +7,16 @@
   <title>shoppingmall &lt; yuyu.com</title>
   <link rel="stylesheet" href="./css/modules/init.css">
   <link rel="stylesheet" href="./css/modules/grid.css">
+  <link rel="stylesheet" href="./css/modules/stylesheet.css">
   <style>
     .box-wrapper {
 
     }
     .box {
-      /*height: 100px;*/
+      height: 63px;
       color: #333;
       text-align: center;
-      line-height: 126px;
+      line-height: 63px;
     }
     .gap {
       margin-bottom: 21px;
@@ -25,36 +26,118 @@
 <body class="show-grid">
 
   <div class="container">
-    <div class="row gap">
-      <div class="header-logo box col is-2">
-        <img class="logo" src="images/header/logo.svg" alt="youyu 로고 이미지" titl="youyu">        
-      </div>
-      <div class="header-search col is-4 is-offset-2">
+    <header class="row">
+      <h1 class="header-logo box col is-3">
+        <a href="#">
+          <img class="logo-image" src="images/header/logo.svg" alt="youyu 로고 이미지" title="youyu">                              
+        </a>
+      </h1>
+      <div class="header-search box col is-4 is-offset-1">
         <form>
           <fieldset>
             <legend>검색영역</legend>
-            <input class="input" type="search">
-            <a href="#">검색</a>
+            <input class="input" type="search" placeholder="    검색어를 입력하세요.">
+            <a class="icon-search" href="#">검색</a>
           </fieldset>
         </form>
       </div>
-      <div class="header-info">
-        <a class="info-1 col is-1" href="#">회원가입</a>
-        <a class="info-1 col is-1" href="#">로그인</a>
+      <div class="header-info box col is-2 is-offset-2">
+        <a class="info-1" href="#">회원가입</a>
+        <a class="info-2" href="#">로그인</a>
       </div>
-      <div class="col is-8">
-        <div class="box-wrapper row is-nesting">
-          <div class="box col is-3 is-offset-1">
-            
-        </div>
+      <nav class="nav-wrapper box col is-12">
+        <!--<div class="box-wrapper row is-nesting">
+          <div class="box col is-3 is-offset-1"></div>
+        </div>-->
+        <ul class="nav-list">
+          <li><a href="#">main</a></li>
+          <li><a href="#">brand</a></li>
+          <li><a href="#">special</a></li>
+          <li><a href="#">outer</a></li>
+          <li><a href="#">tops</a></li>
+          <li><a href="#">bottom</a></li>
+          <li><a href="#">dress</a></li>
+          <li><a href="#">shoes</a></li>
+          <li><a href="#">bag</a></li>
+          <li><a href="#">acc</a></li>
+          <li><a href="#">summer</a></li>
+          <li><a href="#">etc</a></li>
+        </ul>
+      </nav>
+  </header>
+</div>
+<div class="nav-filter">
+  <div class="filter-set">
+    <div class="filter-image"></div>
+    <p>필터를 설정하세요.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="banner col is-12">
+      <img src="images/banner/banner-01.jpg" alt="홈 메인배너 이미지">
+      <div class="carousel">
+        <div class="carousel-1"></div>
+        <div class="carousel-2"></div>
+        <div class="carousel-3"></div>
+        <div class="carousel-4"></div>
+        <div class="carousel-5"></div>
+        <div class="carousel-6"></div>
+        <div class="carousel-7"></div>
+        <div class="carousel-8"></div>
+        <div class="carousel-9"></div>
+        <div class="carousel-10"></div>
       </div>
     </div>
     <div class="row">
-      <div class="box col is-4">column 1/3</div>
-      <div class="box col is-4">column 1/3</div>
-      <div class="box col is-4">column 1/3</div>
+      <div class="bestseller row col is-12 ">
+        <h2 class="bestseller-heading">베스트셀러</h2>
+        <div class="best-1 col is-3">
+          <div class="image-best">
+            <a href="#"><img src="images/best-seller/bs-seller-01.jpg" alt="zemma world"></a>
+          </div>
+          <div class="best-1-text">
+            <h3>Zemma World</h3>
+            <p>Puppy 코튼니트</p>
+            <p>39,000원 <button class="heart heart1"></button></p>
+                        
+          </div>
+        </div> 
+        <div class="best-2 col is-3">
+          <div class="image-best">        
+            <a href="#"><img src="images/best-seller/bs-seller-02.jpg" alt="myblin"></a>
+          </div>
+          <div class="best-2-text">
+            <h3>myblin</h3>
+            <p>버튼 체크 원피스</p> 
+            <p>41,000원<button class="heart heart2"></button></p>
+          </div>
+        </div>
+        <div class="best-3 col is-3">
+          <div class="image-best">        
+            <a href="#"><img src="images/best-seller/bs-seller-03.jpg" alt="bullan girl"></a>
+          </div>
+          <div class="best-3-text">
+            <h3>BULLAN GIRL</h3>
+            <p>아미라벨맨투맨</p> 
+            <p>12,500원<button class="heart heart2"></button></p>
+          </div>
+        </div>
+        <div class="best-4 col is-3">
+          <div class="image-best">        
+            <a href="#"><img src="images/best-seller/bs-seller-04.jpg" alt="minibbing"></a>
+          </div>
+          <div class="best-4-text">
+            <h3>MINIBBING</h3>
+            <p>Night-스키니팬츠</p> 
+            <p>29,900원<button class="heart heart1"></button></p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </div>  
+</div>
+
 
 <script src="./js/toggleGrid.js"></script>
 </body>

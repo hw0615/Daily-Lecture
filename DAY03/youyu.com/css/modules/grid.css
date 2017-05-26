@@ -8,7 +8,7 @@
   content: '';
   position: absolute;
   top: 0;
-  height: 100vh;
+  height: 100%;
 }
 
 .show-grid::before {
@@ -40,11 +40,11 @@
   clear: both;
 }
 
-.row.is-nesting > :first-child {
+.row .is-nesting :first-child {
   margin-left: 0;
 }
 
-.row.is-nesting > :last-child {
+.row .is-nesting :last-child {
   margin-right: 0;
 }
 
@@ -198,28 +198,4 @@
   margin-left: 1080px;
 }
 
-.header-logo {
-  margin-top: 42px;
-  width: 170px;
-}
-
-.logo {
-  background: url(images/header/logo.svg) no-repeat;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-.header-search {
-  margin-top: 42px;
-}
-
-.input {
-  width: 380px;
-  height: 25px;
-}
-
-.header-info a {
-  text-decoration: none;
-  color: #991717;
-}
+/*# sourceMappingURL=../../map/grid.css.map */

@@ -1,0 +1,125 @@
+@import '_settings.scss';
+@import '_mixin';
+// bestseller 영역
+.bestseller{
+    margin-top: 25px;
+    h2{
+        margin: 0;
+        }
+    [class^=best-]{
+        height: 360px;
+        border: 1px solid #ddd;
+        margin-top: 16px;
+        padding: 0 20px;
+        }
+    :nth-child(2){
+        margin-left: 0;
+        }
+    :nth-child(5){
+        margin-right: 0;
+        }
+    .image-best{
+        padding-top: 20px;
+    }
+    .best-1-text{
+        margin: 0;
+        padding: 0;
+        border: transparent;
+    }
+    .best-1-text > p,h3{
+        margin: 0;
+        line-height: 1.4;
+    }
+    .best-1-text > h3{
+        padding-top: 15px;
+        font-size: 1.4rem;
+    }        
+    .best-1-text :nth-child(3){
+        padding-top: 22px;
+        color: #991717;
+        font-size: 1.75rem;
+    }
+    .best-2-text{
+        margin: 0;
+        padding: 0;
+        border: transparent;
+    }
+    .best-2-text > p,h3{
+        margin: 0;
+        line-height: 1.4;
+    }
+    .best-2-text > h3{
+        padding-top: 15px;
+        font-size: 1.4rem;
+    }        
+    .best-2-text :nth-child(3){
+        padding-top: 22px;
+        color: #991717;
+        font-size: 1.75rem;
+    }
+    .best-3-text{
+        margin: 0;
+        padding: 0;
+        border: transparent;
+    }
+    .best-3-text > p,h3{
+        margin: 0;
+        line-height: 1.4;
+    }
+    .best-3-text > h3{
+        padding-top: 15px;
+        font-size: 1.4rem;
+    }        
+    .best-3-text :nth-child(3){
+        padding-top: 22px;
+        color: #991717;
+        font-size: 1.75rem;
+    }
+    .best-4-text{
+        margin: 0;
+        padding: 0;
+        border: transparent;
+    }
+    .best-4-text > p,h3{
+        margin: 0;
+        line-height: 1.4;
+    }
+    .best-4-text > h3{
+        padding-top: 15px;
+        font-size: 1.4rem;
+    }        
+    .best-4-text :nth-child(3){
+        padding-top: 22px;
+        color: #991717;
+        font-size: 1.75rem;
+    }
+    .heart.heart1{
+        float: right;
+        margin-top: 4px;
+        cursor: pointer;
+        background: transparent;
+        border: transparent;
+        background-image: url('../../images/icons/icons.svg');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: 0px -96px;
+        height: 15px;
+        width: 20px;
+        overflow: hidden;
+    }
+    .heart.heart2{
+        float: right;
+        margin-top: 4px;
+        cursor: pointer;
+        background: transparent;
+        border: transparent;
+        background-image: url('../../images/icons/icons.svg');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: 0px -111px;
+        height: 15px;
+        width: 20px;
+        overflow: hidden;
+    }
+    
+}
