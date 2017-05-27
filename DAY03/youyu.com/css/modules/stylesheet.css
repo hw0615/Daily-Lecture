@@ -176,12 +176,12 @@ a {
   cursor: pointer;
 }
 
-.carousel .carousel-10 {
+.carousel div:hover {
   background: #bd1d31;
 }
 
 .bestseller {
-  margin-top: 25px;
+  padding-top: 29px;
 }
 
 .bestseller h2 {
@@ -207,89 +207,28 @@ a {
   padding-top: 20px;
 }
 
-.bestseller .best-1-text {
-  margin: 0;
+.bestseller .best-1:hover, .bestseller .best-2:hover, .bestseller .best-3:hover, .bestseller .best-4:hover {
+  border: 1px solid #991717;
+}
+
+.bestseller .best-text {
+  margin-top: 9px;
   padding: 0;
   border: transparent;
 }
 
-.bestseller .best-1-text > p, .bestseller h3 {
+.bestseller .best-text p {
   margin: 0;
   line-height: 1.4;
 }
 
-.bestseller .best-1-text > h3 {
+.bestseller .best-text h3 {
+  margin: 0;
   padding-top: 15px;
   font-size: 1.4rem;
 }
 
-.bestseller .best-1-text :nth-child(3) {
-  padding-top: 22px;
-  color: #991717;
-  font-size: 1.75rem;
-}
-
-.bestseller .best-2-text {
-  margin: 0;
-  padding: 0;
-  border: transparent;
-}
-
-.bestseller .best-2-text > p, .bestseller h3 {
-  margin: 0;
-  line-height: 1.4;
-}
-
-.bestseller .best-2-text > h3 {
-  padding-top: 15px;
-  font-size: 1.4rem;
-}
-
-.bestseller .best-2-text :nth-child(3) {
-  padding-top: 22px;
-  color: #991717;
-  font-size: 1.75rem;
-}
-
-.bestseller .best-3-text {
-  margin: 0;
-  padding: 0;
-  border: transparent;
-}
-
-.bestseller .best-3-text > p, .bestseller h3 {
-  margin: 0;
-  line-height: 1.4;
-}
-
-.bestseller .best-3-text > h3 {
-  padding-top: 15px;
-  font-size: 1.4rem;
-}
-
-.bestseller .best-3-text :nth-child(3) {
-  padding-top: 22px;
-  color: #991717;
-  font-size: 1.75rem;
-}
-
-.bestseller .best-4-text {
-  margin: 0;
-  padding: 0;
-  border: transparent;
-}
-
-.bestseller .best-4-text > p, .bestseller h3 {
-  margin: 0;
-  line-height: 1.4;
-}
-
-.bestseller .best-4-text > h3 {
-  padding-top: 15px;
-  font-size: 1.4rem;
-}
-
-.bestseller .best-4-text :nth-child(3) {
+.bestseller .best-text :nth-child(3) {
   padding-top: 22px;
   color: #991717;
   font-size: 1.75rem;
@@ -304,13 +243,238 @@ a {
   background-image: url("../../images/icons/icons.svg");
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-position: 0px -96px;
+  background-position: 0px -111px;
   height: 15px;
   width: 20px;
   overflow: hidden;
 }
 
-.bestseller .heart.heart2 {
+.bestseller .heart.heart1:focus {
+  background-image: url("../../images/icons/icons.svg");
+  background-repeat: no-repeat;
+  background-position: 0px -96px;
+}
+
+h2 {
+  margin: 0;
+}
+
+.icon-heart {
+  cursor: pointer;
+  float: right;
+  margin: 4px 10px 3px 0;
+  background: url("../../images/icons/icons-like-before.svg") no-repeat;
+  border: transparent;
+  height: 15px;
+}
+
+.icon-heart:focus {
+  background: url("../../images/icons/icons-like-after.svg") no-repeat;
+  border: transparent;
+  height: 15px;
+}
+
+[class^=brand-text-] {
+  position: relative;
+  top: 82px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: #000;
+  opacity: 0.8;
+}
+
+.brand-box-title {
+  color: #fff;
+  padding-left: 9px;
+  line-height: 1.5;
+}
+
+.brand-heading {
+  margin: 40px 0 18px 0;
+}
+
+.brand-1 {
+  margin-left: 0;
+  background: url("../../images/brand/brand-01.jpg") no-repeat;
+  width: 100%;
+  height: 100%;
+  width: 250px;
+  height: 147px;
+}
+
+.brand-1 .brand-1-name {
+  position: relative;
+  top: 54px;
+  left: 74px;
+  color: #fff;
+  font-size: 2.6rem;
+  text-shadow: 1px 2px 10px black;
+}
+
+.brand-2 {
+  background: url("../../images/brand/brand-02.jpg") no-repeat;
+  width: 250px;
+  height: 147px;
+}
+
+.brand-2 .brand-2-name {
+  position: relative;
+  top: 54px;
+  left: 88px;
+  color: #fff;
+  font-size: 2.6rem;
+  text-shadow: 1px 2px 10px black;
+}
+
+.brand-2 .brand-2-text {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: #000;
+  opacity: 0.8;
+}
+
+.brand-3 {
+  background: url("../../images/brand/brand-03.jpg") no-repeat;
+  width: 250px;
+  height: 147px;
+}
+
+.brand-3 .brand-3-name {
+  position: relative;
+  top: 54px;
+  left: 64px;
+  color: #fff;
+  font-size: 2.6rem;
+  text-shadow: 1px 2px 10px black;
+}
+
+.brand-3 .brand-3-text {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: #000;
+  opacity: 0.8;
+}
+
+.brand-4 {
+  margin-right: 0;
+  background: url("../../images/brand/brand-04.jpg") no-repeat;
+  width: 250px;
+  height: 147px;
+}
+
+.brand-4 .brand-4-name {
+  position: relative;
+  top: 54px;
+  left: 38px;
+  color: #fff;
+  font-size: 2.6rem;
+  text-shadow: 1px 2px 10px black;
+}
+
+.brand-4 .brand-4-text {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: #000;
+  opacity: 0.8;
+}
+
+.brand-button {
+  position: relative;
+}
+
+.brand-button .pre {
+  position: absolute;
+  top: 0;
+  left: -32px;
+  background: #f0f0f0;
+  border: 2px solid #ddd;
+  height: 147px;
+  width: 22px;
+  background-image: url("../../images/icons/icons-tri-left.svg");
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: 3px 68px;
+}
+
+.brand-button .next {
+  position: absolute;
+  top: 0;
+  right: -32px;
+  background: #f0f0f0;
+  border: 2px solid #ddd;
+  height: 147px;
+  width: 22px;
+  background-image: url("../../images/icons/icons-tri-right.svg");
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: 5px 68px;
+}
+
+.brandnew {
+  margin-top: 41px;
+}
+
+.brandnew h2 {
+  margin: 0;
+}
+
+.brandnew [class^=brandnew-] {
+  height: 360px;
+  border: 1px solid #ddd;
+  margin-top: 16px;
+  padding: 0 20px;
+}
+
+.brandnew :nth-child(2) {
+  margin-left: 0;
+}
+
+.brandnew :nth-child(5) {
+  margin-right: 0;
+}
+
+.brandnew .image-brandnew {
+  padding-top: 20px;
+}
+
+.brandnew .brandnew-1:hover, .brandnew .brandnew-2:hover, .brandnew .brandnew-3:hover, .brandnew .brandnew-4:hover {
+  border: 1px solid #991717;
+}
+
+.brandnew .brandnew-text {
+  margin-top: 9px;
+  padding: 0;
+  border: transparent;
+}
+
+.brandnew .brandnew-text p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.brandnew .brandnew-text h3 {
+  margin: 0;
+  padding-top: 15px;
+  font-size: 1.4rem;
+}
+
+.brandnew .brandnew-text :nth-child(3) {
+  padding-top: 22px;
+  color: #991717;
+  font-size: 1.75rem;
+}
+
+.brandnew .heart.heart1 {
   float: right;
   margin-top: 4px;
   cursor: pointer;
@@ -323,6 +487,52 @@ a {
   height: 15px;
   width: 20px;
   overflow: hidden;
+}
+
+.brandnew .heart.heart1:focus {
+  background-image: url("../../images/icons/icons.svg");
+  background-repeat: no-repeat;
+  background-position: 0px -96px;
+}
+
+.tip .tip-heading-box .tip-heading {
+  padding: 40px 0 42px 0;
+  display: inline-block;
+  width: 85px;
+  height: 20px;
+}
+
+.tip .tip-heading-box .tip-carousel {
+  float: right;
+  padding-top: 45px;
+}
+
+.tip .tip-heading-box .tip-carousel::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.tip .tip-heading-box .tip-carousel div {
+  float: right;
+  background: #ccc;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.tip .tip-heading-box .tip-carousel div:hover {
+  background: #bd1d31;
+}
+
+.tip-1 {
+  margin-left: 0;
+}
+
+.tip-3 {
+  margin-right: 0;
 }
 
 /*# sourceMappingURL=../../map/stylesheet.css.map */

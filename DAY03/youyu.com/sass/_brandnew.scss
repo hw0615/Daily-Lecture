@@ -1,12 +1,13 @@
 @import '_settings.scss';
 @import '_mixin';
-// bestseller 영역
-.bestseller{
-    padding-top: 29px;
+// brandnew 영역
+
+.brandnew{
+    margin-top: 41px;
     h2{
         margin: 0;
         }
-    [class^=best-]{
+    [class^=brandnew-]{
         height: 360px;
         border: 1px solid #ddd;
         margin-top: 16px;
@@ -18,15 +19,15 @@
     :nth-child(5){
         margin-right: 0;
         }
-    .image-best{
+    .image-brandnew{
         padding-top: 20px;
     }
-    .best-1, .best-2, .best-3, .best-4{
+    .brandnew-1, .brandnew-2, .brandnew-3, .brandnew-4{
         &:hover{
             border: 1px solid #991717;
         }
     }
-    .best-text{
+    .brandnew-text{
         margin-top: 9px;
         padding: 0;
         border: transparent;

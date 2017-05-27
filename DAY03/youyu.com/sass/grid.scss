@@ -65,9 +65,9 @@
   // Nesting Row Module
   // 중첩 로우(행) 모듈
   // .row.is-nesting
-  & .is-nesting {
-    & :first-child { margin-left: 0; }
-    & :last-child { margin-right: 0; }
+  &.is-nesting {
+    & > :first-child { margin-left: 0; }
+    & > :last-child { margin-right: 0; }
   }
 }
 

@@ -1,0 +1,38 @@
+@import '_settings.scss';
+@import '_mixin';
+// tip 영역
+.tip{
+    .tip-heading-box{
+        .tip-heading{
+        padding: 40px 0 42px 0;
+        display: inline-block;
+        width: 85px;
+        height: 20px;
+        }
+        .tip-carousel{
+        float: right;                                    
+        // width: 180px;  
+        padding-top: 45px;
+        @include clearfix;
+        & div{
+        float: right;                                    
+        background: #ccc;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+        }
+        div:hover{
+            background: #bd1d31;
+            }
+        }
+    }     
+}
+    .tip-1{
+        margin-left: 0;
+        }
+    .tip-3{
+        margin-right: 0;
+        }
+    

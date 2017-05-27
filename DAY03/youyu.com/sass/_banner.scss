@@ -2,7 +2,7 @@
 @import '_mixin';
 // banner 영역
 .carousel{
-    width: 1060px;
+    width: 200px;
     margin: 0 auto;        
     padding-top: 20px;
     @include clearfix;
@@ -15,7 +15,7 @@
         margin-right: 10px;
         cursor: pointer;
     }
-    .carousel-10{
+    div:hover{
         background: #bd1d31;
     }
 }

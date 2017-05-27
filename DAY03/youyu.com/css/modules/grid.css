@@ -40,11 +40,11 @@
   clear: both;
 }
 
-.row .is-nesting :first-child {
+.row.is-nesting > :first-child {
   margin-left: 0;
 }
 
-.row .is-nesting :last-child {
+.row.is-nesting > :last-child {
   margin-right: 0;
 }
 
