@@ -1,21 +1,4 @@
 .box {
-  text-align: center;
-}
-
-.box:before {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -0.25em;
-}
-
-.box > div {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.box {
   position: fixed;
   top: 30px;
   right: 30px;
@@ -25,3 +8,5 @@
   background-color: hsla(0,0%,20%,0.45);
   color: hsl(0,0%,100%);
 }
+
+/*# sourceMappingURL=../map/style.css.map */

@@ -7,7 +7,6 @@
     @include size(100px auto);
     @include bg-color(#333, 0.45);
     @include color (#fff);
-    @extend %center-box-block;
     // text-align: center;
     // line-height: 100px;
 }
