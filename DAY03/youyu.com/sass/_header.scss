@@ -1,6 +1,9 @@
 @import '_settings.scss';
 @import '_mixin';
 // header 영역
+body{
+  font-family: 'NanumSquareOTFRegular';
+}
 .container{
   padding-top: 42px;
 }

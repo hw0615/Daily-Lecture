@@ -1,0 +1,89 @@
+@import '_settings.scss';
+@import '_mixin';
+// bestreview 영역
+.best-review{
+    margin-top: 39px;
+    h2{
+        margin: 0;
+        }
+    [class^=best-review-]{
+        height: 335px;
+        border: 1px solid #ddd;
+        margin-top: 16px;
+        padding: 0 20px;
+        }
+    :nth-child(2){
+        margin-left: 0;
+        }
+    :nth-child(7){
+        margin-right: 0;
+        }
+    .image-best-review{
+        padding-top: 20px;
+    }
+    .best-review-1, .best-review-2, .best-review-3, .best-review-4, .best-review-5, .best-review-6{
+        &:hover{
+            border: 1px solid #991717;
+        }
+    }
+    .best-review-text{
+        margin-top: 9px;
+        padding: 0;
+        border: transparent;
+        width: 115px;
+        height: 65px;
+        & p{
+            margin: 0;
+            line-height: 1.4;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        & h3{
+            margin: 0;
+            padding-top: 15px;
+            font-size: 1.4rem;
+        }
+        & :nth-child(3){
+            padding-top: 22px;
+            color: #991717;
+            font-size: 1.75rem;
+        }
+    }
+    .heart.heart1{
+        float: right;
+        padding: 0;
+        margin-top: 4px;
+        cursor: pointer;
+        background: transparent;
+        border: transparent;
+        background-image: url('../../images/icons/icons.svg');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: 4.5px -111px;        
+        height: 15px;
+        width: 20px;        
+        overflow: hidden;
+            &:focus{
+            background-image: url('../../images/icons/icons.svg');
+            background-repeat: no-repeat;
+            background-position: 4.5px -96px;            
+            }
+    }
+    .starpoint{
+        margin-left: 20px;
+        .star{
+        float: left;
+        margin-top: 75px;
+        cursor: pointer;
+        background: transparent;
+        border: transparent;
+        background-image: url('../../images/icons/icons.svg');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: 0px -140px;
+        height: 10px;
+        width: 15px;
+        }
+    }   
+}

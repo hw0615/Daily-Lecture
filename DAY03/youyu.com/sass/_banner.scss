@@ -1,6 +1,10 @@
 @import '_settings.scss';
 @import '_mixin';
 // banner 영역
+.banner{
+    img{
+    }
+}
 .carousel{
     width: 200px;
     margin: 0 auto;        
@@ -15,7 +19,7 @@
         margin-right: 10px;
         cursor: pointer;
     }
-    div:hover{
+    div:hover, div:focus{
         background: #bd1d31;
     }
 }

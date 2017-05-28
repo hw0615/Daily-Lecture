@@ -46,9 +46,6 @@
         <a class="info-2" href="#">로그인</a>
       </div>
       <nav class="nav-wrapper box col is-12">
-        <!--<div class="box-wrapper row is-nesting">
-          <div class="box col is-3 is-offset-1"></div>
-        </div>-->
         <ul class="nav-list">
           <li><a href="#">main</a></li>
           <li><a href="#">brand</a></li>
@@ -70,6 +67,41 @@
   <div class="filter-set">
     <div class="filter-image"></div>
     <p>필터를 설정하세요.</p>
+    <form class="container">
+      <div class="filter-age col is-12">
+        <span>연령대</span>
+        <fieldset>
+          <legend>필터검색영역 연령대</legend>
+          <div class="filter-age-wrapper">
+            <label for="filter-age"><input type="checkbox" value="none">10대</label>
+            <label for="filter-age"><input type="checkbox" value="none">20대</label>
+            <label for="filter-age"><input type="checkbox" value="none">30대</label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="filter-style col is-12">
+        <span>스타일</span>  
+        <fieldset>
+          <legend>필터검색영역 스타일</legend>
+          <div class="filter-style-wrapper">
+            <label for="filter-style"><input type="checkbox" value="none">소녀룩</label>         
+            <label for="filter-style"><input type="checkbox" value="none">모던시크</label>       
+            <label for="filter-style"><input type="checkbox" value="none">심플베이지</label>        
+            <label for="filter-style"><input type="checkbox" value="none">로맨틱</label>         
+            <label for="filter-style"><input type="checkbox" value="none">오피스룩</label>         
+            <label for="filter-style"><input type="checkbox" value="none">캠퍼스룩</label>         
+            <label for="filter-style"><input type="checkbox" value="none">빈티지</label>         
+            <label for="filter-style"><input type="checkbox" value="none">트레이닝</label>         
+          </div>    
+        </fieldset>
+      </div>
+      <div class="filter-button col is-12">
+        <div class="filter-button-wrapper">
+          <button class="filter-button-reset">초기화</button>
+          <button class="filter-button-done">필터 선택 완료</button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
 <section class="container">
@@ -239,8 +271,152 @@
         <a href="#"><img src="images/tip/product-3.jpg" alt="20% 세일 데일리 백"></a>
       </div>              
     </div>
+    <div class="best-review row col is-12 ">
+      <h2 class="best-reviewheading is-12">베스트 리뷰</h2>
+      <div class="best-review-1 col is-2">
+        <div class="image-best-review">
+          <a href="#"><img src="images/best-review/bs-product-01.jpg" alt="첫번째 베스트리뷰"></a>
+        </div>
+        <div class="best-review-text">
+          <h3>따뜻해줘 가디건</h3>
+          <p>배송은 쇼핑몰에서 <br>입고가 늦어져서 입고가 늦어져서 ...</p>
+          <p>31,900원 <button class="heart heart1"></button></p>
+        </div>
+        <div class="starpoint">
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+        </div>
+      </div> 
+      <div class="best-review-2 col is-2">
+        <div class="image-best-review">        
+          <a href="#"><img src="images/best-review/bs-product-02.jpg" alt="두번째 베스트리뷰"></a>
+        </div>
+        <div class="best-review-text">
+          <h3>버클트임박시후드</h3>
+          <p>후기를 너무 늦게 <br>썼네요ㅠ 딱 제가 원하던</p> 
+          <p>30,600원<button class="heart heart1"></button></p>
+        </div>
+        <div class="starpoint">
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+        </div>
+      </div>
+      <div class="best-review-3 col is-2">
+        <div class="image-best-review">        
+          <a href="#"><img src="images/best-review/bs-product-03.jpg" alt="세번째 베스트리뷰"></a>
+        </div>
+        <div class="best-review-text">
+          <h3>Chic-자켓</h3>
+          <p>어깨가 좀 있는 <br>편이어서 오버핏으로 구매했</p> 
+          <p>49,000원<button class="heart heart1"></button></p>
+        </div>
+        <div class="starpoint">
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+        </div>
+      </div>
+      <div class="best-review-4 col is-2">
+        <div class="image-best-review">        
+          <a href="#"><img src="images/best-review/bs-product-04.jpg" alt="네번째 베스트리뷰"></a>
+        </div>
+        <div class="best-review-text">
+          <h3>마실로 루즈핏 니트</h3>
+          <p>베이지색상 가디건 <br>필요했었는데 마침 루즈핏가디건</p> 
+          <p>19,000원<button class="heart heart1"></button></p>
+        </div>
+        <div class="starpoint">
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+        </div>
+      </div>
+      <div class="best-review-5 col is-2">
+        <div class="image-best-review">        
+          <a href="#"><img src="images/best-review/bs-product-05.jpg" alt="다섯번째 베스트리뷰"></a>
+        </div>
+        <div class="best-review-text">
+          <h3>멜라니 트렌치 코트</h3>
+          <p>Lorem ipsum <br>dolor sit amet,amorpati</p> 
+          <p>19,000원<button class="heart heart1"></button></p>
+        </div>
+        <div class="starpoint">
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+        </div>
+      </div>
+      <div class="best-review-6 col is-2">
+        <div class="image-best-review">        
+          <a href="#"><img src="images/best-review/bs-product-06.jpg" alt="여섯번째 베스트리뷰"></a>
+        </div>
+        <div class="best-review-text">
+          <h3>Luci-브이넥니트</h3>
+          <p>노랑노랑하니 <br>봄분위기 나고좋아요 매일 입</p> 
+          <p>24,000원<button class="heart heart1"></button></p>
+        </div>
+        <div class="starpoint">
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+          <button class="star"></button>
+        </div>
+      </div>
+    </div>
   </div>  
 </section>
+<div class="footer-info">
+  <ul>
+    <li class="info-list1"><a href="#" class="info-list-1">YOUYU 소개</a></li>
+    <li class="info-list2"><a href="#" class="info-list-2">통합배송</a></li>
+    <li class="info-list3"><a href="#" class="info-list-3">고객센터</a></li>
+    <li class="info-list4"><a href="#" class="info-list-4">이용약관,개인정보</a></li>
+  </ul>
+</div>
+  <footer class="container">
+    <div class="row">
+      <address class="address col is-7">
+        <p><span class="address-info">Company.</span>YOUYU</p>
+        <p><span class="address-info">대표이사.</span>이정희</p>
+        <p><span class="address-info">개인정보관리책임자.</span>이정희</p>
+        <p><span class="address-info">사업자번호.</span>123-45-67890</p>
+        <p><span class="address-info">통신판매업신고.</span>2016-성남분당-1234</p>
+        <p><span class="address-info">주소.</span>경기 성남시 분당구 판교역로 221 102호</p>
+        <p><span class="address-info">대표번호.</span>1234-5678</p>
+      </address>
+      <div class="customercenter col is-2">
+        <h2>고객센터</h2>
+        <p class="call">1234-5678</p>
+        <p>월~금  11AM ~ 6PM</p>
+        <p>LUNCH  12:30 ~ 1:30PM</p>
+      </div>
+      <div class="copyright col is-7">
+        Copyright &copy; 2016 YOUYU Co,. Ltd. All rights reserved.
+      </div>
+      <div class="footer-icons col is-5">
+        <a href="#" class="icons-links-1"></a>
+        <a href="#" class="icons-links-2"></a>
+        <a href="#" class="icons-links-3"></a>
+        <a href="#" class="icons-links-4"></a>
+        <a href="#" class="icons-links-5"></a>
+        <div class="footer-partner"></div>
+      </div>
+    </div>
+  </footer>
+  
 
 
 <script src="./js/toggleGrid.js"></script>

@@ -9,11 +9,29 @@
   border-top: 3px solid #bd1d31;
   border-bottom: 1px solid #ddd;
   height: 42px;
+  overflow: hidden;
   p{
+  height: 38px;
   margin: 0;
   text-align: center;
   line-height: 3;
   color: #991717;
+  }
+  form{
+    padding-top: 22px;
+  }
+  span{
+    vertical-align: super;
+    font-size: 1.75rem;
+    padding-right: 19px;
+    line-height: 1;
+  }
+  &:hover{
+  background: #f0f0f0;
+  border-top: 3px solid #bd1d31;
+  border-bottom: 1px solid #ddd;
+  height: 232px;
+  transition: bottom 0.5s ease-in-out;
   }
   .filter-image{
     position: absolute;
@@ -25,5 +43,56 @@
     background-size: 19px auto;
     background-repeat: no-repeat;
     background-position: 0 -58px; 
-  }
+  }    
+  .filter-age, .filter-style{
+    padding-bottom: 18px;
+    fieldset{
+      display: inline-block;
+    }
+    .filter-age-wrapper, .filter-style-wrapper{
+      float: left;
+      font-size: 1.2rem;
+    }
+      input{
+      display: none;
+      &:checked, &:hover, &:focus{
+      background: #bd1d31;        
+      }
+      }
+      label{
+      display: inline-block;
+      width: 70px;
+      height: 21px;
+      background-color: #aaa;
+      border-radius: 3px;
+      color: #fff;
+      text-align: center;
+      line-height: 2;
+      cursor: pointer;
+      &:checked, &:hover, &:focus{
+      background: #bd1d31;        
+      }
+      }
+      
+    }
+    .filter-button{
+      padding-top: 25px;  
+      .filter-button-wrapper{
+        width: 225px;
+        margin: 0 auto;
+          }
+          button{
+            font-size: 1.5rem;
+            color: #fff;
+            padding: 6px 22px;
+            border: transparent;
+            border-radius: 25px;
+            background: #aaa;
+            cursor: pointer;
+          }
+          .filter-button-done{
+            background: #bd1d31;
+            margin-left: 5px;
+          }
+      }
 }
