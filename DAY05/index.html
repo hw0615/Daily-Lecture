@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="study/javascript-syntax.types.js"></script>
+</head>
+<body>
+    <form name="user_info">
+        <div class="form-group">
+            <label class="control-label" for="user-name">이름</label>
+            <input class="form-control" required type="text" id="user_name" name="user-name">
+        </div>
+        <div class="form-group">
+            <label for="user-email" class="control-label">이메일</label>
+            <input class="form-control" required type="email" id="user_email" name="user-email">
+        </div>
+        <div class="form-group">
+            <label for="user-gender" class="control-label">성별</label>
+            <label>
+                <input 
+                    class="form-control" 
+                    type="radio" 
+                    id="user_gender" 
+                    name="user-gender"
+                    required 
+                    checked value="male"> 남성
+            </label>
+            <label>
+                <input 
+                    class="form-control" 
+                    type="radio" 
+                    name="user-gender" 
+                    value="female"> 여성
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="user-age" class="control-label">나이</label>
+            <input class="form-control" type="number" id="user_age" name="user-age">
+        </div>
+        <button type="submit">전송</button>
+    </form>
+</body>
+</html>
