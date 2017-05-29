@@ -2,7 +2,8 @@
 @import '_mixin';
 // filter 영역
 .nav-filter{
-  position: relative;  
+  position: absolute;
+  width: 100%;  
 }
 .filter-set{
   background: #f0f0f0;

@@ -129,7 +129,8 @@ a {
 }
 
 .nav-filter {
-  position: relative;
+  position: absolute;
+  width: 100%;
 }
 
 .filter-set {
@@ -238,6 +239,10 @@ a {
 .filter-set .filter-button .filter-button-done {
   background: #bd1d31;
   margin-left: 5px;
+}
+
+.banner img {
+  padding-top: 42px;
 }
 
 .carousel {
@@ -867,28 +872,28 @@ footer .footer-icons .footer-partner {
   font-family: 'NanumSquareOTFLight';
   font-style: normal;
   font-weight: 400;
-  src: url("../font/NanumSquareOTFLight.otf") format("opentype");
+  src: url("../../font/NanumSquareOTFLight.otf") format("opentype");
 }
 
 @font-face {
   font-family: 'NanumSquareOTFRegular';
   font-style: normal;
   font-weight: 400;
-  src: url("../font/NanumSquareOTFRegular.otf") format("opentype");
+  src: url("../../font/NanumSquareOTFRegular.otf") format("opentype");
 }
 
 @font-face {
   font-family: 'NanumSquareOTFBold';
   font-style: normal;
   font-weight: 700;
-  src: url("../font/NanumSquareOTFBold.otf") format("opentype");
+  src: url("../../font/NanumSquareOTFBold.otf") format("opentype");
 }
 
 @font-face {
   font-family: 'NanumSquareOTFExtraBold';
   font-style: normal;
   font-weight: 700;
-  src: url("../font/NanumSquareOTFExtraBold.otf") format("opentype");
+  src: url("../../font/NanumSquareOTFExtraBold.otf") format("opentype");
 }
 
 /*# sourceMappingURL=../../map/stylesheet.css.map */
