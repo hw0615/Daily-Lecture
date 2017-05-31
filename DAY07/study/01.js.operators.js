@@ -81,7 +81,6 @@ console.groupEnd('typeof는 null, Array, 그 외 Host Object 를 모두 "object"
 // 원시 데이터는 객체가 아니다.
 // 숫자 값, 문자 값, 논리 값, null, undefined
 console.group('원시 데이터 유형은 instanceof 로 검증할 수 없다.');
-console.group('원시 데이터 유형은 ')
 console.log('90 instanceof Number:', 90 instanceof Number);
 console.log('new Number(90) instanceof Number:', new Number(90) instanceof Number);             
 console.log('Number("101") instanceof Number:', Number('101') instanceof Number);
@@ -105,13 +104,13 @@ console.groupEnd('Array 를 올바르게 판별하는 ES5 방법');
 console.group('constructor 속성은 모든 객체가 태어날때부터 꼬리표처럼 가지고 태어난다.')
 
 // 객체의 유형
-console.log('type.num.constructor:', types.num.constructor === Number);
-console.log('type.str.constructor:', types.str.constructor === String);
-console.log('type.boo.constructor:', types.boo.constructor === Boolean);
-console.log('type.fnc.constructor:', types.fnc.constructor === Function);
-console.log('type.arr.constructor:', types.arr.constructor === Array);
-console.log('type.obj.constructor:', types.obj.constructor === Object);
-console.log('type.date.constructor:', types.date.constructor === Date);
+console.log('types.num.constructor:', types.num.constructor === Number);
+console.log('types.str.constructor:', types.str.constructor === String);
+console.log('types.boo.constructor:', types.boo.constructor === Boolean);
+console.log('types.fnc.constructor:', types.fnc.constructor === Function);
+console.log('types.arr.constructor:', types.arr.constructor === Array);
+console.log('types.obj.constructor:', types.obj.constructor === Object);
+console.log('types.date.constructor:', types.date.constructor === Date);
 
 // 객체가 아닌 유형 null, undefined
 // .constructor 속성은 객체가 소유한 것이기에, 객체가 아닌 것은 검증할 수 없을 뿐더러 오류를 발생시킨다.
