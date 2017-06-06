@@ -83,6 +83,7 @@ function randomMinMax(min, max) {
   max = max - min;
   return Math.round( Math.random() * max ) + min;
 }
+
 /**
  * 전달된 인자에서 최솟값, 최댓값을 구분한 후, 그 사이의 난수를 반환하는 유틸리티 함수
  * 
@@ -98,3 +99,83 @@ function randomRange(n1, n2) {
   max = Math.max(n1, n2);
   return randomMinMax(min, max);
 }
+
+/**
+ * 숫자 유형의 데이터인지 감별하는 유틸리티 함수
+ * @global
+ * @func isNumber
+ * @param {any} data  - JavaScript의 모든 데이터 유형
+ * @returns {boolean} - 숫자 유형인지 아닌지 유무 true | false
+ */
+function isNumber(data) {
+  return isType(data, 'number') && !Number.isNaN(data);
+}
+/**
+ * 문자 유형의 데이터인지 감별하는 유틸리티 함수
+ * @global
+ * @func isString
+ * @param {any} data  - JavaScript의 모든 데이터 유형
+ * @returns {boolean} - 문자 유형인지 아닌지 유무 true | false
+ */
+function isString(data) {
+  return isType(data, 'string');
+}
+/**
+ * 불리언 유형의 데이터인지 감별하는 유틸리티 함수
+ * @global
+ * @func isBoolean
+ * @param {any} data  - JavaScript의 모든 데이터 유형
+ * @returns {boolean} - 불리언 유형인지 아닌지 유무 true | false
+ */
+function isBoolean(data) {
+  return isType(data, 'boolean');
+}
+/**
+ * 함수 유형의 데이터인지 감별하는 유틸리티 함수
+ * @global
+ * @func isFunction
+ * @param {any} data  - JavaScript의 모든 데이터 유형
+ * @returns {boolean} - 함수 유형인지 아닌지 유무 true | false
+ */
+function isFunction(data) {
+  return isType(data, 'function');
+}
+/**
+ * 배열 유형의 데이터인지 감별하는 유틸리티 함수
+ * @global
+ * @func isArray
+ * @param {any} data  - JavaScript의 모든 데이터 유형
+ * @returns {boolean} - 배열 유형인지 아닌지 유무 true | false
+ */
+function isArray(data) {
+  return isType(data, 'array');
+}
+/**
+ * 객체(Object) 유형의 데이터인지 감별하는 유틸리티 함수
+ * @global
+ * @func isObject
+ * @param {any} data  - JavaScript의 모든 데이터 유형
+ * @returns {boolean} - 객체(Object) 유형인지 아닌지 유무 true | false
+ */
+function isObject(data) {
+  return isType(data, 'object');
+}
+
+/**
+ * 유사 배열 객체를 배열 객체로 변경(복사) 처리하여 반환하는 유틸리티 함수
+ *
+ * @param {any} o   - 유사 배열 객체 ( 배열과 흡사한 객체 e.g) arguments, NodeList )
+ * @returns {array} - (복사된) 배열 객체
+ */
+function makeArray(o) {
+  // var array = [];
+  // if ( !('length' in o) ) { return []; }
+  // for ( var i=0; i<o.length; i++ ) {
+  //   array.push(o[i]);
+  // }
+  // return array;
+  if ( !('length' in o) ) { return []; }
+  // 메서드 빌려쓰기 패턴
+  return Array.prototype.slice.call(o); // silce(0)을 적용시켜야 함
+} 
+
