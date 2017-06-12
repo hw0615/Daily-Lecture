@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="ko-KR" class="no-js">
+<!--<![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="no-js lt-ie10 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="no-js lt-ie10 ie9"><![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM 스크립트 &lt; JavaScript 학습</title>
+  <link rel="stylesheet" href="study/style.css">
+  <script src="study/data.js"></script>
+  <script src="../LIBRARY/FDS.js"></script>
+  <!--<script async defer src="./study/DOM.Script.js"></script>-->
+</head>
+<body>
+  <script>
+    // console.log('start <body>');
+  </script>
+
+  <!--아래와 같은 마크업은 공백이 없어 첫번째 자식노드가 <abbr> 이지만... -->
+  <!--<h1><abbr title="Document Object Model">DOM</abbr> Script</h1>-->
+
+  <!--아래와 같은 마크업은 공백이 있어 첫번째 자식노드가 #text (텍스트 노드)이다. -->
+  <!--childNodes, children 속성은 자식 노드만 가져온다.-->
+  <div id="target-parent">
+    <h1>
+      <abbr title="Document Object Model">DOM</abbr> Script
+    </h1>
+  </div>
+
+  <nav class="next-target">
+    <ul>
+      <li><a href="">item 01</a></li>
+      <li><a href="">item 02</a></li>
+      <li><a href="">item 03</a></li>
+      <li><a href="">item 04</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    // console.log('end <body>');
+  </script>
+
+  <script src="./study/DOM.Script.js"></script>
+</body>
+</html>
