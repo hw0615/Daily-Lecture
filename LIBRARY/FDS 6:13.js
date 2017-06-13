@@ -2,11 +2,10 @@
 
 var FDS = function(global){
 
-  var document = global.document;
-
   // ——————————————————————————————————————
   // JavaScript 유틸리티 함수
   // ——————————————————————————————————————
+
   function type(data) {
     return Object.prototype.toString.call(data).slice(8,-1).toLowerCase();
   }
@@ -75,10 +74,9 @@ var FDS = function(global){
     return node.nodeType === document.TEXT_NODE;
   }
   function validateElementNode(node) {
-    if ( !node || !isElementNode(node) ) { throw '요소노드를 반드시 전달해야 합니다'; }
-  }
-  function validateElementNodeOrDocument(node) {
-    if ( node !== document && !isElementNode(node) ) { throw '두번째 인자로 요소노드를 전달해 주세요'; }
+    if ( !node || !isElementNode(node) ) {
+      throw '요소노드를 반드시 전달해야 합니다';
+    }
   }
 
   // ——————————————————————————————————————
@@ -89,7 +87,6 @@ var FDS = function(global){
     return document.getElementById(name);
   }
 
-
   function tagAll(name, context) {
     validateError(name, '!string', '전달인자는 문자여야 합니다.');
     if ( context && !isElementNode(context) && context !== document ) {
@@ -98,38 +95,71 @@ var FDS = function(global){
     return (context||document).getElementsByTagName(name);
   }
 
-
   function tag(name, context) {
     return tagAll(name, context)[0];
   }
+  // IE 9+ 에서만 지원되는 신 기술
+  // function classes(name, context) {
+  //   return (context || document).getElementsByClassName(name);
+  // }
 
-
+  // IE 8- 에서도 호환되는 크로스 브라우징 유틸리티 메서드
   var classAll = function(){
     var _classAll = null;
+    // 조건 처리
+    // el.getElementsByClassName 지원하는가?
+    // 'getElementsByClassName' in Element.prototype
+    // 상황에 맞는 함수를 선별하여 할당한 후, 내보내자
     if ( 'getElementsByClassNames' in Element.prototype ) {
       _classAll = function(name, context) {
+        // name 문자열(class 속성명)
         validateError(name, '!string', '첫번째 전달인자는 문자열을 전달해야 합니다.');
+        // context = context || document.body;
+        // validateElementNode(context);
         context = context || document;
-        validateElementNodeOrDocument(context);
+        if ( context !== document && !isElementNode(context) ) { throw '두번째 인자로 요소노드를 전달해 주세요'; }
         return context.getElementsByClassName(name);
+        // context 상위 객체(요소노드, document 객체)
       };
     } else {
       _classAll = function(name, context) {
+        // context 객체 내부의 요소 class 속성 값이
+        // name 값과 일치하는 요소들의 집합을 반환한다.
+        // --------------------------------------------
+        // 전달인자 유효성 검사
         validateError(name, '!string', '첫번째 전달인자는 문자열이어야 합니다.');
-        context = context || document;
-        validateElementNodeOrDocument(context);
+        // context 초기값 설정
+        context = context || document; // document.body
+        // context 객체 유효성 검사
+        if ( context !== document && !isElementNode(context) ) { throw '두번째 인자로 요소노드를 전달해 주세요'; }
+        // context 내부에서 모든 요소를 찾아라!
         var _alls = tagAll('*', context);
         var _matched = [];
-        var match = new RegExp('(^|\\s)' + name + '($|\\s)');
         for ( var i=0, l=_alls.length; i<l; ++i ) {
           var _el = _alls.item(i);
-          if ( match.test(_el.className) ) { _matched.push(_el); }
+          // case 1
+          // context(부모) 객체 내부의 자식(el)을 하나 하나 검증
+          // 검증 내용: name 값하고 el의 className 하고 일치하는지
+          // if ( name !== '' && name === _el.className ) {
+            // 일치한다면 수집하여 반환
+            // _matched.push(_el);
+          // }
+
+          // case 2
+          // name 을 변수로 하는 정규 표현식을 작성
+          var match = new RegExp('(^|\\s)' + name + '($|\\s)');
+          // 정규표현식 객체의 test() 메서드를 사용해서 문자가 일치하는지 검증
+          // 검증 값이 참이면, 수집한다.
+          if ( match.test(_el.className) ) {
+            _matched.push(_el);
+          }
         }
         return _matched;
       };
     }
     return _classAll;
   }();
+
   var classSingle = function(name, context) {
     return classAll(name, context)[0];
   };
@@ -141,7 +171,6 @@ var FDS = function(global){
   };
   var query = function(selector, context){
     return queryAll(selector, context)[0];
-  };
 
   // ——————————————————————————————————————
   // DOM 탐색 API: 유틸리티 함수
@@ -214,8 +243,6 @@ var FDS = function(global){
     }
     return _previousSibling;
   }();
-
-  
   var parent = function(node, depth) {
     validateElementNode(node);
     depth = depth || 1;
