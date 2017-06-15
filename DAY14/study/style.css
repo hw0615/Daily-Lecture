@@ -1,0 +1,38 @@
+/*! style.css @ 2017, yamoo9.net */
+abbr[title] {
+  cursor: help;
+}
+
+.container {
+  width: 80%;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#study-content {
+  list-style: none;
+  margin-top: 2rem;
+  padding-left: 0;
+}
+
+#study-content li {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+#study-content .link-content {
+  text-decoration: none;
+  color: #1AC1E5;
+  font-size: 1.1rem;
+  transition: all 0.8s ease-out;
+}
+
+#study-content .link-content:hover {
+  color: #1A7e87;
+}
+
+#study-content .active .link-content {
+  color: #6252db;
+  font-size: 1.3rem;
+}

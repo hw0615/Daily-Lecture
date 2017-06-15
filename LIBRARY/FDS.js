@@ -88,8 +88,6 @@ var FDS = function(global){
     validateError(name, '!string', '전달인자는 문자여야 합니다.');
     return document.getElementById(name);
   }
-
-
   function tagAll(name, context) {
     validateError(name, '!string', '전달인자는 문자여야 합니다.');
     if ( context && !isElementNode(context) && context !== document ) {
@@ -97,13 +95,9 @@ var FDS = function(global){
     }
     return (context||document).getElementsByTagName(name);
   }
-
-
   function tag(name, context) {
     return tagAll(name, context)[0];
   }
-
-
   var classAll = function(){
     var _classAll = null;
     if ( 'getElementsByClassNames' in Element.prototype ) {
@@ -228,6 +222,32 @@ var FDS = function(global){
     return node.hasChildNodes();
   }
 
+  // ——————————————————————————————————————
+  // DOM 생성/조작 API: 유틸리티 함수
+  // ——————————————————————————————————————
+  var createElement = function(name){
+    validateError(name, '!string', '요소의 이름을 문자열로 전달해주세요.');
+    return document.createElement(name);
+  };
+  var createText = function(content){
+    validateError(content, '!string', '콘텐츠는 문자열이어야 합니다.');
+    return document.createTextNode(content);
+  };
+  var appendChild = function(parent, child) {
+    validateElementNode(parent);
+    parent.appendChild(child);
+    return child;
+  };
+  var createEl = function(name, content) {
+    validateError(name, '!string', '첫번째 인자로 요소의 이름을 설정해주세요.');
+    var el = createElement(name);
+    if ( content && isType(content, 'string') ) {
+      var text = createText(content);
+      appendChild(el, text);
+    }
+    return el;
+  };
+
   // ---------------------------------------
   // 반환: FDS 네임스페이스 객체
   return {
@@ -266,8 +286,12 @@ var FDS = function(global){
     prev: previousSibling,
     next: nextSibling,
     parent: parent,
-    hasChild: hasChild
-
+    hasChild: hasChild,
+    // DOM 생성/조작 API: 유틸리티
+    createElement: createElement,
+    createText: createText,
+    appendChild: appendChild,
+    createEl: createEl
   };
 
 }(window);
