@@ -208,8 +208,6 @@ var FDS = function(global){
     }
     return _previousSibling;
   }();
-
-  
   var parent = function(node, depth) {
     validateElementNode(node);
     depth = depth || 1;
@@ -220,7 +218,7 @@ var FDS = function(global){
   var hasChild = function(node) {
     validateElementNode(node);
     return node.hasChildNodes();
-  }
+  };
 
   // ——————————————————————————————————————
   // DOM 생성/조작 API: 유틸리티 함수
@@ -247,7 +245,92 @@ var FDS = function(global){
     }
     return el;
   };
+  var insertBefore = function(insert, target) {
+    validateElementNode(insert);
+    validateElementNode(target);
+    parent(target).insertBefore(insert, target);
+    return insert;
+  };
+  var before = function(target, insert) {
+    return insertBefore(insert, target);
+  };
+  var prependChild = function(parent, child) {
+    validateElementNode(parent);
+    validateElementNode(child);
+    var target = firstChild(parent);
+    return target ? insertBefore(child, target) : appendChild(parent, child);
+  };
+  var insertAfter = function(insert, target) {
+    // target 뒤에 형제가 있나?
+    var next = nextSibling(target);
+    // 형제가 있으면?
+    if ( next ) {
+      insertBefore(insert, next);
+    }
+    // 형제가 없으면?
+    else {
+      appendChild(parent(target), insert);
+    }
+    return insert;
+  };
+  var after = function(target, insert) {
+    return insertAfter(insert, target);
+  };
+  var removeChild = function(child) {
+    return parent(child).removeChild(child);
+  };
+  var replaceChild = function(replace, target) {
+    validateElementNode(target);
+    return parent(target).replaceChild(replace, target);
+  };
 
+  var hasClass = function(el, name) {
+    validateElementNode(el);
+    validateError(name, '!string');
+    var el_classes = el.getAttribute('class');
+    // for문을 사용한 조건 확인 처리 예시
+    // var classes = el_classes.split(' ');
+    // for ( var i=0, l=classes.length; i<l; ++i) {
+    //   if ( classes[i] === name ) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // }
+    // 정규표현식 객체를 활용한 예시
+    var reg = new RegExp('(^|\\s)' + name + '($|\\s)');
+    return reg.test(el_classes);
+  }
+  var addClass = function(el, name) {
+    if ( !hasClass(el, name) ) {
+      var new_value = (el.getAttribute('class') || '') + ' ' + name;
+      el.setAttribute('class', new_value.trim());
+    }
+    return el;
+  };
+  var removeClass = function(el, name) {
+   if ( !name ) {
+    validateElementNode(el);
+    el.removeAttribute('class');
+   } else {
+     if ( hasClass(el,name) ) {
+       var new_value = el.getAttribute('class').replace(name, '');
+       el.setAttribute('class', new_value.trim());
+     }
+   }
+   return el;
+  };
+  var toggleClass = function(el, name) {
+    return hasClass(el, name) ? removeClass(el, name) : addClass(el, name);
+  };
+  var radioClass = function(el, name) {
+    validateElementNode(el);
+    validateError(name, '!string');
+    var old_active = query('.'+name, parent(el));
+    old_active && removeClass(old_active, name);
+    return addClass(el, name);
+  };
+  
   // ---------------------------------------
   // 반환: FDS 네임스페이스 객체
   return {
@@ -260,7 +343,9 @@ var FDS = function(global){
       license: 'MIT'
     },
 
+    // ----------------
     // 공개 API
+    // ----------------
 
     // JavaScript 유틸리티
     type:          type,
@@ -287,11 +372,24 @@ var FDS = function(global){
     next: nextSibling,
     parent: parent,
     hasChild: hasChild,
+
     // DOM 생성/조작 API: 유틸리티
-    createElement: createElement,
-    createText: createText,
+    createEl: createEl,
     appendChild: appendChild,
-    createEl: createEl
+    prependChild: prependChild,
+    removeChild: removeChild,
+    insertBefore: insertBefore,
+    insertAfter: insertAfter,
+    before: before,
+    after: after,
+    replaceChild: replaceChild,
+    
+    // class 속성 조작: 유틸리티
+    hasClass: hasClass,
+    addClass: addClass,
+    removeClass: removeClass,
+    toggleClass: toggleClass,
+    radioClass: radioClass,
   };
 
 }(window);
