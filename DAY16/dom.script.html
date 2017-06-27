@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="ko-KR" class="no-js">
+<!--<![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="no-js lt-ie10 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="no-js lt-ie10 ie9"><![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>문서객체모델 API &amp; JavaScript</title>
+  <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet">
+  <link rel="stylesheet" href="./study/dom.script.css">
+  <script src="https://cdn.rawgit.com/emmetio/textarea/master/emmet.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <button
+      type="button"
+      class="button is-node-copy"
+      onclick="cloneNodeGNB()">노드 복제</button>
+
+    <hr>
+
+    <!-- 복제할 노드 -->
+    <nav id="gnb">
+      <ul role="presentation" class="list depth-1">
+        <li class="item"><a href="#iot" class="link"><abbr title="Internet of Things">IOT</abbr></a></li>
+        <li class="item"><a href="#it" class="link"><abbr title="Information Technology">IT</abbr></a></li>
+        <li class="item"><a href="#mobile-phone" class="link">Mobile Phone</a></li>
+        <li class="item"><a href="#wide-screen" class="link">Wide Screen</a></li>
+        <li class="item"><a href="#remote-control-system" class="link">Remote Control System</a></li>
+      </ul>
+    </nav>
+
+    <hr>
+
+    <div class="copyzone">
+      <!-- 노드 복제 -->
+    </div>
+
+    <button type="button" class="button is-change-html-code">HTML 교체</button>
+    <p>
+      <textarea
+        id="user-html-code"
+        class="html-wrapper"
+        cols="30"
+        rows="4"
+        placeholder="추가하고자 하는 HTML 코드를 작성하세요."></textarea>
+    </p>
+
+    <div class="html-wrapper">
+      작성한 HTML 코드가 이 곳에 동적으로 처리됩니다. :-)
+    </div>
+
+    <hr>
+
+    <div class="demo insert-adjacent-html">
+      <!--beforebegin-->
+
+      <p class="target">
+        <!--afterbegin-->
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione aperiam ab aliquid asperiores voluptatibus officiis aut veritatis. Explicabo.
+        <!--beforeend-->
+      </p>
+      <!--afterend-->
+    </div>
+
+  </div>
+
+<script src="../LIBRARY/FDS.js"></script>
+<script src="./study/dom.script.js"></script>
+</body>
+</html>

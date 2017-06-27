@@ -3,12 +3,14 @@
 var FDS = function(global){
 
   var document = global.document;
+  var toString = Object.prototype.toString;
+  var forEach  = Array.prototype.forEach;
 
   // ——————————————————————————————————————
   // JavaScript 유틸리티 함수
   // ——————————————————————————————————————
   function type(data) {
-    return Object.prototype.toString.call(data).slice(8,-1).toLowerCase();
+    return toString.call(data).slice(8,-1).toLowerCase();
   }
   function isType(data, kind) {
     // validateError()를 사용하여 오류 조건을 발생시킴:
@@ -63,6 +65,34 @@ var FDS = function(global){
   function makeArray(o) {
     if ( !('length' in o) ) { return []; }
     return Array.prototype.slice.call(o);
+  }
+  var forEachFn = function() {
+    if ( forEach ) {
+      return function(o, callback) {
+        o.forEach(callback);
+      }
+    } else {
+      return function(o, callback) {
+        for ( var i=0, l=o.length; i<l; ++i ) {
+          callback(o[i], i, o);
+        }
+      }
+    }
+  }();
+  function each(o, callback) {
+    validateError(callback, '!function');
+    if ( !isObject(o) && o.length ) { o = makeArray(o); }
+    isArray(o) && forEachFn(o, callback);
+    if ( isObject(o) ) {
+      for ( var prop in o ) {
+        o.hasOwnProperty(prop) && callback(prop, o[prop], o);
+      }
+    }
+    if ( o.nodeType === 1 ) {
+      for ( var prop in o ) {
+        callback(prop, o[prop], o);
+      }
+    }
   }
 
   // ——————————————————————————————————————
@@ -261,68 +291,105 @@ var FDS = function(global){
     return target ? insertBefore(child, target) : appendChild(parent, child);
   };
   var insertAfter = function(insert, target) {
-    // target 뒤에 형제가 있나?
     var next = nextSibling(target);
-    // 형제가 있으면?
-    if ( next ) {
-      insertBefore(insert, next);
-    }
-    // 형제가 없으면?
-    else {
-      appendChild(parent(target), insert);
-    }
-    return insert;
+    return next ?  insertBefore(insert, next) : appendChild(parent(target), insert);
   };
   var after = function(target, insert) {
     return insertAfter(insert, target);
   };
   var removeChild = function(child) {
+    validateElementNode(child);
     return parent(child).removeChild(child);
   };
   var replaceChild = function(replace, target) {
     validateElementNode(target);
     return parent(target).replaceChild(replace, target);
   };
-
-  var hasClass = function(el, name) {
-    validateElementNode(el);
-    validateError(name, '!string');
-    var el_classes = el.getAttribute('class');
-    // for문을 사용한 조건 확인 처리 예시
-    // var classes = el_classes.split(' ');
-    // for ( var i=0, l=classes.length; i<l; ++i) {
-    //   if ( classes[i] === name ) {
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-    // }
-    // 정규표현식 객체를 활용한 예시
-    var reg = new RegExp('(^|\\s)' + name + '($|\\s)');
-    return reg.test(el_classes);
-  }
-  var addClass = function(el, name) {
-    if ( !hasClass(el, name) ) {
-      var new_value = (el.getAttribute('class') || '') + ' ' + name;
-      el.setAttribute('class', new_value.trim());
+  var clone = function(node, deep) {
+    validateElementNode(node);
+    var copyed_node = node.cloneNode(true);
+    if (deep) {
+      var focus_els = queryAll('[href], button, input', node);
+      var copyed_focus_els = queryAll('[href], button, input', copyed_node);
+      each(focus_els, function(el, index){
+        each(el, function(key, value){
+          if ( /^on/.test(key) && isFunction(value) ) {
+            copyed_focus_els[index][key] = value;
+          }
+        });
+      });
     }
-    return el;
+    return copyed_node;
   };
-  var removeClass = function(el, name) {
-   if ( !name ) {
-    validateElementNode(el);
-    el.removeAttribute('class');
-   } else {
-     if ( hasClass(el,name) ) {
-       var new_value = el.getAttribute('class').replace(name, '');
-       el.setAttribute('class', new_value.trim());
-     }
-   }
-   return el;
-  };
-  var toggleClass = function(el, name) {
-    return hasClass(el, name) ? removeClass(el, name) : addClass(el, name);
-  };
+
+  var hasClass = function(){
+    if ( 'classList' in Element.prototype ) {
+      return function(el, name) {
+        validateElementNode(el);
+        validateError(name, '!string');
+        return el.classList.contains(name);
+      };
+    } else {
+      return function(el, name) {
+        validateElementNode(el);
+        validateError(name, '!string');
+        var el_classes = el.getAttribute('class');
+        var reg = new RegExp('(^|\\s)' + name + '($|\\s)');
+        return reg.test(el_classes);
+      };
+    }
+  }();
+  var addClass = function(){
+    if ( 'classList' in Element.prototype ) {
+      return function(el, name) {
+        validateElementNode(el);
+        validateError(name, '!string');
+        el.classList.add(name);
+      }
+    } else {
+      return function(el, name) {
+        if ( !hasClass(el, name) ) {
+          var new_value = (el.getAttribute('class') || '') + ' ' + name;
+          el.setAttribute('class', new_value.trim());
+        }
+        return el;
+      };
+    }
+  }();
+  var removeClass = function(){
+    if ( 'classList' in Element.prototype ) {
+      return function(el, name){
+        validateElementNode(el);
+        validateError(name, '!string');
+        el.classList.remove(name);
+      };
+    } else {
+      return function(el, name) {
+        if ( !name ) {
+          validateElementNode(el);
+          el.removeAttribute('class');
+        } else {
+          if ( hasClass(el, name) ) {
+            var reg = new RegExp(name);
+            var new_value = el.getAttribute('class').replace(reg, '');
+            el.setAttribute('class', new_value.trim());
+          }
+        }
+        return el;
+      };
+    }
+  }();
+  var toggleClass = function(){
+    if ( 'classList' in Element.prototype ) {
+      return function(el, name) {
+        el.classList.toggle(name);
+      };
+    } else {
+      return function(el, name) {
+        hasClass(el, name) ? removeClass(el, name) : addClass(el, name);
+      };
+    }
+  }();
   var radioClass = function(el, name) {
     validateElementNode(el);
     validateError(name, '!string');
@@ -330,7 +397,7 @@ var FDS = function(global){
     old_active && removeClass(old_active, name);
     return addClass(el, name);
   };
-  
+
   // ---------------------------------------
   // 반환: FDS 네임스페이스 객체
   return {
@@ -355,41 +422,39 @@ var FDS = function(global){
     isObject:      isObject,
     makeArray:     makeArray,
     validateError: validateError,
+    each: each,
 
     // DOM 선택 API: 유틸리티
-    id: id,
-    tagAll: tagAll,
-    tag: tag,
-    classAll: classAll,
-    classSingle: classSingle,
-    selector: query,
+    selector:    query,
     selectorAll: queryAll,
 
     // DOM 탐색 API: 유틸리티
-    first: firstChild,
-    last: lastChild,
-    prev: previousSibling,
-    next: nextSibling,
-    parent: parent,
+    first:    firstChild,
+    last:     lastChild,
+    prev:     previousSibling,
+    next:     nextSibling,
+    parent:   parent,
     hasChild: hasChild,
 
     // DOM 생성/조작 API: 유틸리티
-    createEl: createEl,
-    appendChild: appendChild,
+    createEl:     createEl,
+    appendChild:  appendChild,
     prependChild: prependChild,
-    removeChild: removeChild,
+    removeChild:  removeChild,
     insertBefore: insertBefore,
-    insertAfter: insertAfter,
-    before: before,
-    after: after,
+    insertAfter:  insertAfter,
+    before:       before,
+    after:        after,
     replaceChild: replaceChild,
-    
+    clone:        clone,
+
     // class 속성 조작: 유틸리티
-    hasClass: hasClass,
-    addClass: addClass,
+    hasClass:    hasClass,
+    addClass:    addClass,
     removeClass: removeClass,
     toggleClass: toggleClass,
-    radioClass: radioClass,
+    radioClass:  radioClass,
+
   };
 
 }(window);

@@ -84,7 +84,7 @@
       
       function afterTimeRemove() {
         var removed_el = $.selector('.target');
-        global.setTimeout(afterTimeAndAttach.bind(removed_el), 1000);
+        global.setTimeout(afterTimeAndAttach.bind($.removeChild(removed_el)), 1000);
       }
 
       function afterTimeAndAttach() {
@@ -122,7 +122,7 @@
       list_html += '</ul>';
       // 동적으로 HTML 코드를 mount 요소의 내부 코드로 대체 변경
       mount.innerHTML = list_html;
-    }
+    } 
 
     global.choiceContent = function(target) {
       $.radioClass(target, 'active');

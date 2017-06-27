@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form 유효성 검사</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/form-validation.css">
+</head>
+
+<body>
+
+  <!-- 폼 필드 열기 버튼 클릭 시: show-form-overlay 설정 -->
+  <!-- form 전송 시: form-submitted 설정 -->
+  <div class="demo container">
+
+    <!-- 폼 필드 열기 버튼 클릭 시: expand 설정 -->
+    <div class="form-container">
+
+      <button class="icon fa fa-pencil btn-expand" aria-label="폼 필드 열기"></button>
+      <button class="icon fa fa-close btn-fold" aria-label="폼 필드 닫기"></button>
+
+      <div class="form-content">
+        <div class="form-head">
+
+          <!-- 메일 전송 전, 문구 -->
+          <h2 class="headline pre">고민 상담 메일</h2>
+          <p class="desc pre">어떤 이야기도 좋아요 고민을 이야기해주세요.</p>
+
+          <!-- 메일 전송 후, 문구 -->
+          <h2 class="headline post">감사합니다.</h2>
+          <p class="desc post">보내주신 메일을 읽고 답변 드릴게요.</p>
+
+        </div> <!-- // .form-head -->
+
+        <form id="user_contact" novalidate>
+
+          <label for="user_name" class="a11y-hidden">이름</label>
+          <input
+            required
+            type="text"
+            id="user_name"
+            class="input name"
+            placeholder="김혜인">
+
+          <label for="user_email" class="a11y-hidden">이메일</label>
+          <input
+            required
+            type="email"
+            id="user_email"
+            class="input email"
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-z0-9-]+(\.[a-z0-9-]+)*"
+            placeholder="hein-kim@heins.net">
+
+          <label for="user_subject" class="a11y-hidden">주제 선택</label>
+          <select
+            required
+            id="user_subject"
+            class="input select">
+            <option>주제를 선택해주세요.</option>
+            <option value="school-violence">학교 폭력</option>
+            <option value="record-problem">성적 고민</option>
+            <option value="heterosexual-problem">이성 문제</option>
+          </select>
+
+          <label for="user_message" class="a11y-hidden">메시지</label>
+          <textarea
+            required
+            id="user_message"
+            class="input message"
+            placeholder="무엇을 도와드릴까요?"
+          ></textarea>
+
+          <input type="submit" class="input submit" value="메일 전송">
+
+        </form>
+
+      </div> <!-- // .form-contect -->
+    </div> <!-- // .form-container -->
+    <div class="form-overlay"></div>
+  </div> <!-- // .demo -->
+
+  <script src="js/form-validation.js"></script>
+</body>
+
+</html>
