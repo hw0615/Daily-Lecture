@@ -11,7 +11,7 @@
 })(window.emmet);
 
 ;(function(global, document, $){
-  'use strict';
+  'use strict'; 
 
   // ——————————————————————————————————————
   // Node Interface
@@ -106,7 +106,7 @@
     // .html-wrapper 내부에 적용하여 화면을 업데이트 하시오.
     $.selector('div.html-wrapper').innerHTML = html_code;
   }
-
+ 
 
   // [GETTER] Node.innerHTML
   // [SETTER] Node.innerHTML = 'HTML Code';

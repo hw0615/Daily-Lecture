@@ -438,6 +438,7 @@ var FDS = function(global){
 
     // DOM 생성/조작 API: 유틸리티
     createEl:     createEl,
+    // createText:     createText,
     appendChild:  appendChild,
     prependChild: prependChild,
     removeChild:  removeChild,
