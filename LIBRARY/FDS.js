@@ -398,6 +398,57 @@ var FDS = function(global){
     return addClass(el, name);
   };
 
+  // FDS.attr(nodelist, prop, value)
+  var attr = function(o, prop, value) {
+    if (!o || !prop) {
+      throw '첫번째, 두번째 전달인자는 필수입니다.';
+    }
+    // o는 존재하고, Element Node 인가?
+    if ( o && o.nodeType === 1) { // if ( o && isElementNode(o) )
+      o = [o];
+    }
+    // prop 데이터 유형이 객체라면?
+    // 객체의 속성을 순환하여 데이터를 처리
+    if ( isObject(prop) ) {
+      // 노드리스트 순환
+      each(o, function(item, index){
+        // prop 객체({}) 순환
+        each(prop, function(key, value){
+          // class 속성일 경우
+          if (key === 'class') { addClass(item, value); }
+          else { item.setAttribute(key, value); }
+        });
+      });
+      // 함수 종료
+      return;
+    }
+
+    // GET
+    if ( !value ) {
+      return o[0].getAttribute(prop);
+    }
+    // SET
+    else {
+      each(o, function(item, index){
+        if ( prop === 'class') { addClass(item, value); }
+        else { item.setAttribute( prop, value); }
+      });
+    }
+  };
+
+  var removeAttr = function(o, prop) {
+    if (!o || !prop) {
+      throw '첫번째, 두번째 전달인자는 필수입니다.';
+    }
+    // o는 존재하고, Element Node 인가?
+    if ( o && o.nodeType === 1) { // if ( o && isElementNode(o) )
+      o = [o];
+    }
+    each(o, function(item){
+      item.removeAttribute(prop);
+    });
+  };
+
   // ---------------------------------------
   // 반환: FDS 네임스페이스 객체
   return {
@@ -456,6 +507,9 @@ var FDS = function(global){
     toggleClass: toggleClass,
     radioClass:  radioClass,
 
+    // 속성 조작: 유틸리티
+    attr: attr,
+    removeAttr: removeAttr,
   };
 
 }(window);

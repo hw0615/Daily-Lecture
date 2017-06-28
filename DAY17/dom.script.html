@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="ko-KR" class="no-js">
+<!--<![endif]-->
+<!--[if IE 8]><html lang="ko-KR" class="no-js lt-ie10 ie8"><![endif]-->
+<!--[if IE 9]><html lang="ko-KR" class="no-js lt-ie10 ie9"><![endif]-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>문서객체모델 API &amp; JavaScript</title>
+  <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet">
+  <link rel="stylesheet" href="./study/dom.script.css">
+  <script src="https://cdn.rawgit.com/emmetio/textarea/master/emmet.min.js"></script>
+  <script src="./study/oojs-Store.js"></script>
+  <script>
+    (function(global, Store){
+      'use strict';
+      var book_db_data = [
+        {
+          'name': '북유럽신화',
+          'author': '닐 게이먼',
+          'publish': '나무의 철학'
+        },
+        {
+          'name': '나는 너를 본다',
+          'author': '클레어 맥킨토시',
+          'publish': '나무의 철학'
+        }
+      ];
+      // Store 객체 생성
+      var book_collection = new Store(book_db_data);
+      global.book_collection = book_collection;
+      global.my_course = new Store();
+      // 프로토타입 객체 확장
+      Store.prototype.author = 'X-Man';
+    })(window, window.Store);
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="button-set" role="group">
+      <button type="button" class="zoom-in" aria-label="글자 크기 크게">+</button>
+      <button type="button" class="zoom-out" aria-label="글자 크기 작게">-</button>
+    </div>
+    <!-- 인라인 스타일 속성을 설정하면 .style 을 통해 속성을 가져올 수 있다. -->
+    <!-- CSS로 분리 설정된 스타일 속성은 .style 로 가져올 수 없다. -->
+    <ul class="list">
+      <li>item-001</li>
+      <li>item-002</li>
+      <li>item-003</li>
+      <li>item-004</li>
+    </ul>
+
+    <hr>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur mollitia, qui quis aperiam obcaecati perspiciatis recusandae, tempore odio eaque, inventore ea, odit asperiores reprehenderit iusto minus tempora? Ipsam repellendus, amet!</p>
+    <p>Pariatur modi accusamus fuga et molestias quas obcaecati, tempore, doloribus fugiat quod officia? Quos rerum animi tempore repudiandae vitae quasi, adipisci ducimus, nobis ea pariatur excepturi, nesciunt hic corporis quam.</p>
+    <p>Possimus magnam, exercitationem ad quod nobis, aspernatur sequi aut sed architecto non accusantium. Nobis tempora, dolorum ratione laborum ut sapiente explicabo assumenda sunt sint. Fugit recusandae delectus quasi labore commodi.</p>
+    <p>Iure asperiores voluptas, fugit, at ducimus veritatis repellat inventore incidunt adipisci esse. Consequatur ipsum dolorum sunt corrupti tempora, quam veritatis harum non officia at optio quasi sed! Obcaecati, maxime, commodi.</p>
+    <p>Repellat hic deleniti quam nemo, iusto, maiores facilis alias debitis illo ratione quae quisquam libero rerum aliquid sapiente labore ipsum possimus. Rem est excepturi sint facere aliquam porro, iusto quia.</p>
+    <p>Quibusdam itaque expedita debitis ratione odit eum consequatur sequi aliquid harum obcaecati quasi saepe labore, repudiandae tenetur natus iure ex voluptate vero cumque. Voluptatum unde animi tenetur, perferendis in fugiat.</p>
+    <p>Architecto nulla dicta excepturi nam, vitae laborum unde quisquam veniam officia explicabo quis maxime nemo consequatur nostrum sequi numquam incidunt velit, in facere provident est molestiae temporibus. Deleniti beatae, tenetur.</p>
+    <p>Ipsum optio beatae, sequi eaque nihil deserunt consectetur ea incidunt totam soluta iure temporibus minus quia non officiis nulla quo accusantium necessitatibus aliquam amet tempora aperiam nisi vero. Impedit, et.</p>
+    <p>Aspernatur facilis repellat, soluta magni laborum odio officiis illo reiciendis! Dolorum repellendus ab tempora eum ipsam cumque suscipit enim asperiores voluptate, perspiciatis voluptatibus dolore possimus vitae dignissimos, neque nesciunt commodi!</p>
+    <p>Aspernatur sunt repellendus sit eveniet magni voluptatibus voluptate quidem dolorum, temporibus veniam unde tempora repudiandae itaque molestias natus dignissimos, recusandae eaque voluptatem iusto nihil totam. Et eligendi, corrupti vel? Sunt?</p>
+    <p>Pariatur natus architecto tempora porro repellat doloremque, quod, earum ducimus commodi, possimus repudiandae mollitia asperiores. Maxime rerum a, laborum, recusandae quidem omnis minus doloribus officiis laudantium aliquid deleniti amet! Tenetur?</p>
+    <p>Veritatis placeat eaque illo minus eos est officia animi vitae et rem, cupiditate, rerum voluptatum aperiam eveniet mollitia ullam, sapiente soluta blanditiis ad? Ut quaerat nostrum tenetur, reiciendis blanditiis, tempore.</p>
+    <p>Culpa soluta, quia aperiam, maxime id tenetur deserunt! Officiis, harum debitis repellendus pariatur reprehenderit sapiente nemo, illum necessitatibus ut! Facilis minima accusantium adipisci at quia porro, error numquam voluptatum placeat!</p>
+    <p>At, voluptatem unde ipsa illum modi, a fugit deserunt quos odio quo. Omnis molestiae voluptas nesciunt iusto quas quo numquam dolorum nemo quos corporis, excepturi commodi nobis, nostrum, dignissimos, voluptate.</p>
+    <p>Reprehenderit laudantium quaerat voluptates alias rem veniam quod a eveniet nisi voluptate. Dolore vel saepe, quo fugiat ad corporis a repellat temporibus dignissimos. Quae repellat quisquam, vero cupiditate cum obcaecati!</p>
+    <p>Quaerat atque vero, fugiat autem molestiae? Ullam, tenetur officia maxime, enim esse quam praesentium cupiditate iusto doloremque, voluptatum qui. Cum reiciendis et ad totam, ratione enim libero reprehenderit blanditiis voluptatem.</p>
+    <p>Iusto laborum, necessitatibus sed architecto cupiditate, asperiores, ullam nam deserunt distinctio repudiandae autem esse sint! Itaque, rem, dignissimos maiores modi sint quasi eligendi quas alias perferendis expedita repudiandae, sed omnis!</p>
+    <p>Quos enim, dicta soluta accusamus. Illum eum doloremque excepturi placeat, delectus? Fugit autem, ducimus doloremque numquam veritatis neque doloribus dicta, nostrum mollitia cumque reiciendis, eaque consequatur dignissimos quibusdam fugiat! Ullam.</p>
+    <p>Quo omnis veritatis tenetur? Nostrum quo magni, sed inventore pariatur eius est odio ipsa quia illum, facere quis ad maiores at modi expedita laboriosam qui fugit placeat obcaecati provident animi!</p>
+    <p>Minus quod iure provident esse, rem molestiae dolores ab maxime ducimus id mollitia accusamus voluptate facilis odio hic voluptatum sapiente. Delectus impedit provident eius adipisci assumenda ratione quam perferendis ex.</p>
+    <p>Magni voluptates veniam magnam animi, architecto cupiditate, dolorum iste perferendis excepturi reprehenderit corporis sapiente aut deleniti, totam reiciendis nulla quas adipisci dolores laudantium nesciunt quos maxime. Tempora fuga et distinctio.</p>
+    <p>Iure minima expedita nihil dignissimos sunt laborum assumenda, animi vel tenetur quam iusto, voluptatum omnis dolorem id, deleniti cumque delectus tempore. Modi est nam repellat amet odit laborum nobis iure.</p>
+    <p>A tempore voluptatum libero corporis, labore voluptas accusamus magni laborum odio, nesciunt odit laudantium unde nobis consectetur earum ipsa enim vel tempora et id quia velit perferendis. In architecto, quia.</p>
+    <p>Placeat temporibus impedit accusamus, libero eum minus tempora, delectus possimus vitae expedita ipsum nisi deserunt, nemo numquam! Aliquam labore incidunt ipsa, velit hic a. Expedita natus inventore, velit unde obcaecati.</p>
+    <p>Quidem iure itaque qui laboriosam autem, nisi sed enim ea tempore vel cumque sint culpa, soluta quos est obcaecati quaerat dicta delectus, quas et debitis eaque unde maiores! Aperiam, consequuntur.</p>
+    <p>Iste repudiandae pariatur in totam unde. Unde accusamus dolor cupiditate non esse explicabo ad minus itaque ipsam temporibus iure voluptatum impedit tenetur nobis, consequatur iusto hic cumque repellat aliquid quam.</p>
+    <p>Culpa odio repellat aut soluta nemo pariatur. Doloremque fugit itaque tenetur fugiat voluptates, maiores ducimus aliquam inventore cumque, et, veritatis obcaecati autem accusantium illo eligendi. Eaque officia nobis quaerat quos!</p>
+    <p>Dicta at doloremque ullam quis necessitatibus animi maxime dolorum autem, blanditiis ipsam rerum, magnam id sit architecto reiciendis unde optio odit! Laborum possimus quaerat reprehenderit vitae voluptatum labore molestias soluta.</p>
+    <p>Delectus eius sit excepturi nesciunt laudantium harum, quo reprehenderit omnis perferendis, assumenda error maiores rerum neque, expedita, quidem quas molestiae provident. Culpa quis molestias obcaecati ipsum nostrum cum minima dolor?</p>
+    <p>Quam sed eos aliquid maxime facilis beatae dolores nobis impedit. Minus animi perspiciatis, quisquam sapiente nulla, nemo incidunt. Minima pariatur ipsam aut, assumenda tenetur fugiat molestiae aspernatur illo illum minus.</p>
+  </div>
+
+<script src="../LIBRARY/FDS.js"></script>
+<!--<script src="./study/dom.script.js"></script>-->
+</body>
+</html>
