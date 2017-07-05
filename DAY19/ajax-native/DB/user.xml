@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+	<results>
+		<gender>female</gender>
+		<name>
+			<title>miss</title>
+			<first>hannah</first>
+			<last>bartsch</last>
+		</name>
+		<location>
+			<street>2913 schützenstraße</street>
+			<city>mayen-koblenz</city>
+			<state>baden-württemberg</state>
+			<postcode>72810</postcode>
+		</location>
+		<email>hannah.bartsch@example.com</email>
+		<login>
+			<username>biglion241</username>
+			<password>eatme</password>
+			<salt>L2PvQHPT</salt>
+			<md5>f2b1e33cfa34eae93fc7b64e316f5bad</md5>
+			<sha1>c9d94b1aac7acb751c1585fef56e076166f76fc7</sha1>
+			<sha256>4b7c61d91813bf8a7ef87d6f638ebdf96111f74227cba2dc4006151ad41ec70f</sha256>
+		</login>
+		<dob>1982-11-13 02:37:38</dob>
+		<registered>2004-12-08 07:53:43</registered>
+		<phone>0948-4094456</phone>
+		<cell>0173-8784075</cell>
+		<id>
+			<name></name>
+			<value></value>
+		</id>
+		<picture>
+			<large>https://randomuser.me/api/portraits/women/47.jpg</large>
+			<medium>https://randomuser.me/api/portraits/med/women/47.jpg</medium>
+			<thumbnail>https://randomuser.me/api/portraits/thumb/women/47.jpg</thumbnail>
+		</picture>
+		<nat>DE</nat>
+	</results>
+	<results>
+		<gender>male</gender>
+		<name>
+			<title>mr</title>
+			<first>jan-paul</first>
+			<last>goertz</last>
+		</name>
+		<location>
+			<street>7604 leidsekade</street>
+			<city>hoorn</city>
+			<state>flevoland</state>
+			<postcode>81832</postcode>
+		</location>
+		<email>jan-paul.goertz@example.com</email>
+		<login>
+			<username>bigleopard494</username>
+			<password>boom</password>
+			<salt>vDHm2zOV</salt>
+			<md5>6628c48bb031cfc228186990d385316c</md5>
+			<sha1>7852b196236a65884f214483b630fc3c00dd015a</sha1>
+			<sha256>3f54457e45b8e795c98232c659dda287285d76d3ab5fd187ca4d99c12c400aaa</sha256>
+		</login>
+		<dob>1954-07-24 15:12:28</dob>
+		<registered>2006-03-01 23:47:54</registered>
+		<phone>(971)-097-0611</phone>
+		<cell>(907)-660-2747</cell>
+		<id>
+			<name>BSN</name>
+			<value>82265492</value>
+		</id>
+		<picture>
+			<large>https://randomuser.me/api/portraits/men/7.jpg</large>
+			<medium>https://randomuser.me/api/portraits/med/men/7.jpg</medium>
+			<thumbnail>https://randomuser.me/api/portraits/thumb/men/7.jpg</thumbnail>
+		</picture>
+		<nat>NL</nat>
+	</results>
+	<results>
+		<gender>male</gender>
+		<name>
+			<title>mr</title>
+			<first>levi</first>
+			<last>taylor</last>
+		</name>
+		<location>
+			<street>4604 customs street</street>
+			<city>lower hutt</city>
+			<state>manawatu-wanganui</state>
+			<postcode>42477</postcode>
+		</location>
+		<email>levi.taylor@example.com</email>
+		<login>
+			<username>purplebear723</username>
+			<password>torres</password>
+			<salt>pPjh7tQK</salt>
+			<md5>4ce79ba29af86ae6c5fd387953087245</md5>
+			<sha1>86d7d67105c8f388660d933d1b83ab22eeb42227</sha1>
+			<sha256>bd7b5387e48eb9ac8eb2a95f4862d075f42ea1752ffd23692c36fd25937c0573</sha256>
+		</login>
+		<dob>1987-11-21 02:43:28</dob>
+		<registered>2013-05-26 18:40:11</registered>
+		<phone>(609)-633-4875</phone>
+		<cell>(453)-028-6745</cell>
+		<id>
+			<name></name>
+			<value></value>
+		</id>
+		<picture>
+			<large>https://randomuser.me/api/portraits/men/78.jpg</large>
+			<medium>https://randomuser.me/api/portraits/med/men/78.jpg</medium>
+			<thumbnail>https://randomuser.me/api/portraits/thumb/men/78.jpg</thumbnail>
+		</picture>
+		<nat>NZ</nat>
+	</results>
+	<results>
+		<gender>female</gender>
+		<name>
+			<title>miss</title>
+			<first>michelle</first>
+			<last>hanson</last>
+		</name>
+		<location>
+			<street>9862 main street</street>
+			<city>lincoln</city>
+			<state>cornwall</state>
+			<postcode>AG4 0BQ</postcode>
+		</location>
+		<email>michelle.hanson@example.com</email>
+		<login>
+			<username>yellowostrich429</username>
+			<password>kimberly</password>
+			<salt>4nN3lxmp</salt>
+			<md5>423256fa8bd0969c40c635cac2247adc</md5>
+			<sha1>b97ab64d88a7d20ce88b9fe2aa0ec49d830fc5ba</sha1>
+			<sha256>8e4dd5002f7f0e5e43f6fa9fc746eb4715cc5574526f0d5d9db157490eb01e5e</sha256>
+		</login>
+		<dob>1976-05-21 11:18:41</dob>
+		<registered>2002-07-09 22:42:12</registered>
+		<phone>016974 70893</phone>
+		<cell>0799-948-884</cell>
+		<id>
+			<name>NINO</name>
+			<value>PE 54 46 26 Z</value>
+		</id>
+		<picture>
+			<large>https://randomuser.me/api/portraits/women/14.jpg</large>
+			<medium>https://randomuser.me/api/portraits/med/women/14.jpg</medium>
+			<thumbnail>https://randomuser.me/api/portraits/thumb/women/14.jpg</thumbnail>
+		</picture>
+		<nat>GB</nat>
+	</results>
+	<results>
+		<gender>female</gender>
+		<name>
+			<title>mrs</title>
+			<first>krin</first>
+			<last>harrison</last>
+		</name>
+		<location>
+			<street>5276 photinia ave</street>
+			<city>detroit</city>
+			<state>vermont</state>
+			<postcode>60485</postcode>
+		</location>
+		<email>krin.harrison@example.com</email>
+		<login>
+			<username>greengorilla688</username>
+			<password>bigballs</password>
+			<salt>eAUrpJKi</salt>
+			<md5>c6a3280761a159f82d540af7e30d9d79</md5>
+			<sha1>46e90e0e0ed34c912a2efec8d364737385414c46</sha1>
+			<sha256>6d17468afbfa4a790c5741c23d05d49def4c6c42c9f52da363d2f7be130038b7</sha256>
+		</login>
+		<dob>1967-12-23 15:34:22</dob>
+		<registered>2009-06-28 23:39:44</registered>
+		<phone>(245)-732-4547</phone>
+		<cell>(518)-375-3123</cell>
+		<id>
+			<name>SSN</name>
+			<value>666-43-9015</value>
+		</id>
+		<picture>
+			<large>https://randomuser.me/api/portraits/women/92.jpg</large>
+			<medium>https://randomuser.me/api/portraits/med/women/92.jpg</medium>
+			<thumbnail>https://randomuser.me/api/portraits/thumb/women/92.jpg</thumbnail>
+		</picture>
+		<nat>US</nat>
+	</results>
+	<results>
+		<gender>female</gender>
+		<name>
+			<title>madame</title>
+			<first>julie</first>
+			<last>nguyen</last>
+		</name>
+		<location>
+			<street>2115 montée du chemin-neuf</street>
+			<city>chavannes-près-renens</city>
+			<state>luzern</state>
+			<postcode>3325</postcode>
+		</location>
+		<email>julie.nguyen@example.com</email>
+		<login>
+			<username>lazybird824</username>
+			<password>jump</password>
+			<salt>8gIRbp2l</salt>
+			<md5>58871b157479288e6ae131b83de110b7</md5>
+			<sha1>59759ba4aeeda18fddb5b332c2b21ceb0606b268</sha1>
+			<sha256>d84a86eab2bac6d4218dc4ab4ed922dbdb9a6a69c73da95574586868850bdb88</sha256>
+		</login>
+		<dob>1962-11-26 03:07:47</dob>
+		<registered>2011-02-15 15:47:59</registered>
+		<phone>(327)-909-8375</phone>
+		<cell>(719)-958-4708</cell>
+		<id>
+			<name>AVS</name>
+			<value>756.XWIO.NKYT.55</value>
+		</id>
+		<picture>
+			<large>https://randomuser.me/api/portraits/women/41.jpg</large>
+			<medium>https://randomuser.me/api/portraits/med/women/41.jpg</medium>
+			<thumbnail>https://randomuser.me/api/portraits/thumb/women/41.jpg</thumbnail>
+		</picture>
+		<nat>CH</nat>
+	</results>
+	<results>
+		<gender>female</gender>
+		<name>
+			<title>mademoiselle</title>
+			<first>marie</first>
+			<last>roux</last>
+		</name>
+		<location>
+			<street>8003 rue du stade</street>
+			<city>ballens</city>
+			<state>glarus</state>
+			<postcode>5637</postcode>
+		</location>
+		<email>marie.roux@example.com</email>
+		<login>
+			<username>crazymouse870</username>
+			<password>12345</password>
+			<salt>jbtqhCzC</salt>
+			<md5>657f820b0fabba23bac8014aeed9564b</md5>
+			<sha1>2b2fde7f853dab595a88f4e2490f9fe6b7963a6a</sha1>
+			<sha256>73f37a90f5e4b27a100833fd0475033769e0bce99464b4d8f5c433156aa2fc66</sha256>
+		</login>
+		<dob>1981-08-16 17:32:00</dob>
+		<registered>2002-10-15 14:18:30</registered>
+		<phone>(140)-908-8194</phone>
+		<cell>(555)-013-9100</cell>
+		<id>
+			<name>AVS</name>
+			<value>756.OQTN.STRT.96</value>
+		</id>
+		<picture>
+			<large>https://randomuser.me/api/portraits/women/87.jpg</large>
+			<medium>https://randomuser.me/api/portraits/med/women/87.jpg</medium>
+			<thumbnail>https://randomuser.me/api/portraits/thumb/women/87.jpg</thumbnail>
+		</picture>
+		<nat>CH</nat>
+	</results>
+	<results>
+		<gender>female</gender>
+		<name>
+			<title>ms</title>
+			<first>sandra</first>
+			<last>medina</last>
+		</name>
+		<location>
+			<street>3096 calle de argumosa</street>
+			<city>pamplona</city>
+			<state>región de murcia</state>
+			<postcode>23308</postcode>
+		</location>
+		<email>sandra.medina@example.com</email>
+		<login>
+			<username>organicduck801</username>
+			<password>pitch</password>
+			<salt>eMUgpVik</salt>
+			<md5>ed2f0f4a7f41c6f1aca627406613e7b6</md5>
+			<sha1>153913756a895a40b2c7b6b58b7235a0df16bbca</sha1>
+			<sha256>97fe9df485ed60ffa915e85735a209c1aed4a757d252a2954b4f78b9bba93afd</sha256>
+		</login>
+		<dob>1979-05-03 03:54:07</dob>
+		<registered>2003-03-06 18:13:16</registered>
+		<phone>904-630-943</phone>
+		<cell>676-352-536</cell>
+		<id>
+			<name>DNI</name>
+			<value>87480367-Z</value>
+		</id>
+		<picture>
+			<large>https://randomuser.me/api/portraits/women/47.jpg</large>
+			<medium>https://randomuser.me/api/portraits/med/women/47.jpg</medium>
+			<thumbnail>https://randomuser.me/api/portraits/thumb/women/47.jpg</thumbnail>
+		</picture>
+		<nat>ES</nat>
+	</results>
+	<results>
+		<gender>female</gender>
+		<name>
+			<title>mrs</title>
+			<first>anaïs</first>
+			<last>weijman</last>
+		</name>
+		<location>
+			<street>4136 oosterkade</street>
+			<city>zevenaar</city>
+			<state>utrecht</state>
+			<postcode>48072</postcode>
+		</location>
+		<email>anaïs.weijman@example.com</email>
+		<login>
+			<username>tinypeacock784</username>
+			<password>lickme</password>
+			<salt>6ZrMpnqs</salt>
+			<md5>ca7a31d15d5175d09d7a4b58d8f5355c</md5>
+			<sha1>0330644b29d0b677adc84ca3a238da3cee9f0e49</sha1>
+			<sha256>e306c55165c1d6b812f8f5153f48dd08cfa4e545c4270147f630f8b3ad697905</sha256>
+		</login>
+		<dob>1973-03-26 11:28:49</dob>
+		<registered>2013-12-14 07:13:44</registered>
+		<phone>(074)-394-2194</phone>
+		<cell>(145)-717-1825</cell>
+		<id>
+			<name>BSN</name>
+			<value>48053983</value>
+		</id>
+		<picture>
+			<large>https://randomuser.me/api/portraits/women/38.jpg</large>
+			<medium>https://randomuser.me/api/portraits/med/women/38.jpg</medium>
+			<thumbnail>https://randomuser.me/api/portraits/thumb/women/38.jpg</thumbnail>
+		</picture>
+		<nat>NL</nat>
+	</results>
+	<results>
+		<gender>male</gender>
+		<name>
+			<title>mr</title>
+			<first>konsta</first>
+			<last>halla</last>
+		</name>
+		<location>
+			<street>7925 mannerheimintie</street>
+			<city>loviisa</city>
+			<state>northern savonia</state>
+			<postcode>94447</postcode>
+		</location>
+		<email>konsta.halla@example.com</email>
+		<login>
+			<username>beautifulbird151</username>
+			<password>poodle</password>
+			<salt>vPsaBAny</salt>
+			<md5>a23d7e978fb3c2b6ad6982ee37ce5d59</md5>
+			<sha1>6b6e1a309b57ded8e9cc504194f5f323c7927591</sha1>
+			<sha256>9190f4591ea807c0b4ab7a194f8a3f165c9dcdd4b4abaefc1d27eb490981a328</sha256>
+		</login>
+		<dob>1963-12-05 01:07:33</dob>
+		<registered>2014-07-25 19:00:23</registered>
+		<phone>03-921-951</phone>
+		<cell>048-725-21-62</cell>
+		<id>
+			<name>HETU</name>
+			<value>1563-605V</value>
+		</id>
+		<picture>
+			<large>https://randomuser.me/api/portraits/men/92.jpg</large>
+			<medium>https://randomuser.me/api/portraits/med/men/92.jpg</medium>
+			<thumbnail>https://randomuser.me/api/portraits/thumb/men/92.jpg</thumbnail>
+		</picture>
+		<nat>FI</nat>
+	</results>
+	<info>
+		<seed>7ff451587206bfde</seed>
+		<results>10</results>
+		<page>1</page>
+		<version>1.1</version>
+	</info>
+</user>
