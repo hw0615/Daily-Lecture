@@ -1,0 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Black+Ops+One);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
+
+.black-ops-one {
+	font-family: 'Black Ops One', cursive;
+	letter-spacing: 0.1em;
+}
+
+.inconsolata {
+	font-family: Inconsolata;
+}

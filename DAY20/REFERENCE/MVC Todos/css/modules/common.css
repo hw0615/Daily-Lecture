@@ -1,0 +1,19 @@
+body {
+	margin: 0;
+	font: 0.875rem/1.5 "Helvetica Neue", Helvetica, Sans-Serif;
+	background: #fff;
+}
+
+body, body * {
+	box-sizing: border-box;
+}
+
+.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.anim {
+	transition: all .4s ease-out;
+}

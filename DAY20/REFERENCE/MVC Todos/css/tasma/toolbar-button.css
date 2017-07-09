@@ -1,0 +1,51 @@
+/* Toolbar */
+.toolbar {
+	width: 100%;
+	box-shadow: 0 0px 3px hsla(0, 0%, 0%, 0.3);
+}
+
+.fixed {
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	bottom: 0;
+}
+
+/* Button */
+.toolbar .button:first-child {
+	border-right: 1px solid #D8D8D8;
+}
+
+.toolbar .button {
+	float: left;
+	width: 50%;
+}
+
+.button {
+	cursor: pointer;
+	box-sizing: border-box;
+	border: none;
+	padding: 1em;
+	background: #fff;
+	color: #757575;
+	font: 15px/1 'Inconsolata';
+}
+
+.button:hover,
+.button:focus {
+	background: #DEE0E8;
+}
+
+.button.new {
+	background: #ff4183;
+	color: #fff;
+}
+
+.button.new:hover,
+.button.new:focus {
+	background: #BF1C56;
+}
+
+.button.new:first-child {
+	border-right: none;
+}

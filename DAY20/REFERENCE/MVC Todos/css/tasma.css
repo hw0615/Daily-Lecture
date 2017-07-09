@@ -1,0 +1,22 @@
+/*
+	Color Map
+	------------------------------------------------------------
+	$purple: #5549a6
+	$gray:   #757575
+	$pink:   #ff4183
+*/
+
+/* Google Web Fonts */
+@import url("modules/webfonts.css");
+
+/* Initialization */
+@import url("modules/common.css");
+
+/* Header */
+@import url("tasma/header.css");
+
+/* Toolbar & Buttons */
+@import url("tasma/toolbar-button.css");
+
+/* Tasks List */
+@import url("tasma/tasks-list.css");

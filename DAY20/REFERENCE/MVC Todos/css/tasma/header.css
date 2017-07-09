@@ -1,0 +1,29 @@
+/* Header */
+header {
+	padding: 1em;
+	background:
+		linear-gradient(-45deg, transparent 45%, hsla(0, 0%, 100%, 0.4) 50%, transparent 50%),
+		linear-gradient(90deg, #5549a6, #42A6A4);
+	background-size: 10px 10px, auto;
+	color: #fff;
+	text-align: center;
+}
+
+/* Brand */
+.brand {
+	position: relative;
+	display: inline;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 42px;
+}
+
+.brand:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -18px;
+	border-top: 10px solid #fff;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+}

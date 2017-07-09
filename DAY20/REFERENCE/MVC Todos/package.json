@@ -1,0 +1,29 @@
+{
+  "name": "tasma-application-demo",
+  "version": "0.0.1",
+  "description": "TASMA 앱 - 테스크 관리도구",
+  "dependencies": {},
+  "devDependencies": {
+    "handlebars": "^4.0.5",
+    "hbsfy": "^2.4.1",
+    "jquery": "^2.1.4",
+    "uglify": "^0.1.5"
+  },
+  "scripts": {
+    "server": "http-server -a localhost -p 9090 -o",
+    "bundle": "browserify js/app.js > js/app-bundle.js -t hbsfy",
+    "watch": "watchify js/app.js -o js/app-bundle.js -t hbsfy -d -v",
+    "uglify": "uglify -s js/app-bundle.js -o js/app-bundle.js",
+    "build": "npm run bundle; npm run uglify",
+    "clear": "rm js/app-bundle.js"
+  },
+  "keywords": [
+    "TASMA",
+    "browserify",
+    "watchify",
+    "hbsfy",
+    "jquery"
+  ],
+  "author": "yamoo9 <yamoo9@naver.com>",
+  "license": "ISC"
+}
