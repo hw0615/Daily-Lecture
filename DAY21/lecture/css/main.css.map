@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"../sass/main.sass"
+	],
+	"sourcesContent": [
+		"html {\n    overflow-y: scroll;\n    font-size: 100%; }\nbody {\n    margin: 0;\n    font: 87.5%/1.5 \"Spoqa Han Sans\", Sans-Serif; }\n\n.app {\n    margin-top: 40px; }\n\n.main {\n    padding: 1.4em;\n    background: rgba(#fff, 1);\n    transition: all 0.4s ease-out;\n    &.is-fixed {\n        position: fixed;\n        z-index: 1000;\n        top: 0;\n        left: 0;\n        right: 0;\n        background: rgba(#fff, 0.6);\n        backdrop-filter: blur(2px); } }\n.dim {\n    position: fixed;\n    z-index: 10000;\n    top: 0;\n    right: 0;\n    left: 0;\n    bottom: 0;\n    background: rgba(#000, 0.567); }\n.hide {\n    display: none; }\n"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,IAAI,AAAC,CACD,UAAU,CAAE,MAAM,CAClB,SAAS,CAAE,IAAI,CAAI,AACvB,AAAA,IAAI,AAAC,CACD,MAAM,CAAE,CAAC,CACT,IAAI,CAAE,sCAAsC,CAAI,AAEpD,AAAA,IAAI,AAAC,CACD,UAAU,CAAE,IAAI,CAAI,AAExB,AAAA,KAAK,AAAC,CACF,OAAO,CAAE,KAAK,CACd,UAAU,CAAO,IAAI,CACrB,UAAU,CAAE,iBAAiB,CAQM,AAXvC,AAII,KAJC,AAID,SAAU,AAAC,CACP,QAAQ,CAAE,KAAK,CACf,OAAO,CAAE,IAAI,CACb,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,CAAC,CACP,KAAK,CAAE,CAAC,CACR,UAAU,CAAO,qBAAI,CACrB,eAAe,CAAE,SAAS,CAAG,AACrC,AAAA,IAAI,AAAC,CACD,QAAQ,CAAE,KAAK,CACf,OAAO,CAAE,KAAK,CACd,GAAG,CAAE,CAAC,CACN,KAAK,CAAE,CAAC,CACR,IAAI,CAAE,CAAC,CACP,MAAM,CAAE,CAAC,CACT,UAAU,CAAO,iBAAI,CAAW,AACpC,AAAA,KAAK,AAAC,CACF,OAAO,CAAE,IAAI,CAAI"
+}

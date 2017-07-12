@@ -1,0 +1,96 @@
+mixin noti()
+  .notification(class!=attributes.class)
+    block
+    button(
+      type="button"
+      aria-label="close notification"
+    ).delete
+
+mixin modal(data)
+  .modal(class!=attributes.class)
+    .modal-background
+    .modal-card
+      header.modal-card-head
+        h4.modal-card-title= data.title
+        button(type="button" aria-label="close modal").delete
+      section.modal-card-body
+        block
+      footer.modal-card-foot
+        button(type="button").button.is-success= data.success
+        button(type="button").button.is-cancel= data.cancel
+
+<!DOCTYPE html>
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible", content="ie=Edge")
+    title 컴포넌트 제작 - jQuery 학습
+    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet", href="/node_modules/bulma/css/bulma.css")
+    link(rel="stylesheet", href="./css/main.css")
+
+  body
+
+    .app.container
+      .columns
+        .column.is-6
+          +noti()(class="site-noti is-primary")
+            p
+              | Lorem ipsum dolor sit amet,
+              strong consectetur adipisicing elit.
+              a(href) Eum
+              | , quas facere numquam, aperiam illum ullam?
+              | Tempora doloremque recusandae quo! Nobis.
+          +noti()(class="site-noti")
+            blockquote
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum architecto velit, officiis aliquid,
+              strong quae dolorem id exercitationem sunt
+              | non reprehenderit iste, voluptate recusandae labore modi in cumque similique unde iusto!
+          +noti()(class="site-noti is-danger")
+            ul
+              li
+                a(href="") Lorem ipsum dolor sit.
+              li
+                a(href="") Iure necessitatibus, mollitia adipisci!
+              li
+                a(href="") Et quibusdam, doloremque qui!
+        .column.is-6
+          .field.has-addons.on-top
+            .control
+              button(type="button").show-modal.button.is-warning
+                span.icon.is-small
+                  //- i.fa.fa-folder-open-o
+                  i.fa.fa-check
+                span Show Modal
+            .control
+              button(type="button").hide-modal.button.is-info
+                span.icon.is-small
+                  //- i.fa.fa-folder-o
+                  i.fa.fa-times-circle
+                span Hide Modal
+
+          -
+            var modal_data = {
+              title: 'jQuery Modal',
+              success: 'Save',
+              cancel: 'Cancel'
+            }
+          +modal(modal_data)(class="fds-modal")
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, fugit delectus voluptatum temporibus maiores hic. Praesentium.
+              strong sapiente,
+              | repellat! Et ipsum vel quam?
+            p
+              a(href)  Ex consequatur,
+              | dolor at illum minus dolorem facilis libero, soluta, fugiat ducimus iste similique quibusdam deleniti aliquid dicta!
+            p
+              | Consectetur adipisicing elit. Itaque, fugit
+              strong  Далеко-далеко за.
+              |  repellat! Et ipsum vel quam?
+
+          .media-object-container
+
+    script(src="/node_modules/jquery/dist/jquery.min.js")
+    script(src="./js/components.js")

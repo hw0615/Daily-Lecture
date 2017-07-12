@@ -1,0 +1,73 @@
+//- 데이터 정의
+//- http://bulma.io/documentation/components/menu/
+-
+  var accordion_data = {
+    'general': [
+      {'content': 'dashboard', 'href': '#dashboard'},
+      {'content': 'customers', 'href': '#customers'}
+    ],
+    'administration': [
+      {'content': 'team settings', 'href': '#team-settings'},
+      {'content': 'manage your team', 'href': '#manage-your-team'},
+      {'content': 'authentication', 'href': '#authentication'}
+    ],
+    'invitations': [
+      {'content': 'cloud storage environment settings', 'href': '#cloud-storage-environment-settings'},
+    ]
+  }
+
+//- 믹스인 정의
+mixin accordion(data)
+  article.ui-accordion.menu.box
+    each links, label in data
+      h4.menu-label
+        a.box(href)= label
+      ul.menu-list
+        each link in links
+          li
+            a(href=link.href)= link.content
+
+//---------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible", content="ie=Edge")
+    title jQuery 학습
+    link(rel="stylesheet", href="/node_modules/bulma/css/bulma.css")
+    link(rel="stylesheet", href="./css/main.css")
+
+  body
+
+    .app.container.wrapper.yamoo9-code
+      .columns
+        .column.is-6.main
+          h1.title.is-1 Hi jQuery :-)
+          p.subtitle.is-4 write less do more.
+          //- 믹스인 사용
+          +accordion(accordion_data)
+
+        .column.is-4.is-offset-1
+          button.button.is-primary.toggle-box(type="button")
+            | toggle
+            strong .box
+            | Elements
+          p.box Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam atque facere, asperiores magnam reprehenderit incidunt doloremque labore autem eos ea odio accusamus similique distinctio ullam? Facere aperiam ad quaerat dolores voluptas dolorem error ratione, officia, porro autem, saepe modi cumque.
+          p.box Voluptate harum, maiores doloremque, incidunt quisquam, itaque, quos atque error porro inventore eius. Saepe a, sunt cum in maiores quos enim veniam voluptatum! A inventore vitae laboriosam fugit recusandae, eveniet excepturi rem ut, perferendis distinctio mollitia, atque voluptatem odit delectus.
+          p.box Voluptate ex omnis provident sed praesentium fuga beatae odit cumque iure, maxime, quos laborum reiciendis eos. Labore aperiam quia, amet ab necessitatibus sequi magni at, eius, consectetur odio temporibus sapiente similique quam, quidem vitae totam blanditiis! Deleniti, asperiores aut ducimus.
+          p.box Asperiores consequatur ipsum itaque nesciunt aperiam natus pariatur molestias, maiores totam perspiciatis deserunt fugiat recusandae at reiciendis quod doloremque temporibus officia culpa ducimus, cum laboriosam, provident nam deleniti voluptates. Voluptatem tenetur accusantium corporis, architecto velit numquam nemo tempore. Nesciunt, inventore.
+          p.box Unde hic, dolorem maxime cum quas. Recusandae perferendis eveniet error blanditiis tempora. Ea cupiditate numquam nobis sunt tempore in voluptatum delectus laborum harum quaerat, eveniet quia odio facilis at provident, maxime vitae. Amet maiores, ipsum nisi, tempora sit optio cumque.
+          p.box Dolorum itaque, corporis architecto impedit fuga eum, sunt. Nisi aperiam omnis quisquam odio voluptas veniam officiis ullam velit doloribus, voluptatum vitae reprehenderit dolorum pariatur eveniet enim, fugit possimus minus maxime deserunt molestias saepe officia iusto! Quasi eligendi, laborum sed hic.
+
+    .notification.is-primary
+      button.delete
+      p lorem ipsum dolor sit amet, consectetur adipiscingelit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet,consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, quod in fugiat ullam. Deserunt delectus id iure vel inventore voluptates, aspernatur sequi atque corrupti, adipisci, eum maiores sit. Distinctio doloremque perferendis facere quidem beatae dolores voluptatibus eius at, inventore fugiat, vitae molestias magnam nobis odio fuga sunt. Sit architecto, magni.
+
+
+
+
+    script(src="/node_modules/jquery/dist/jquery.min.js")
+    script(src="./js/main.js")

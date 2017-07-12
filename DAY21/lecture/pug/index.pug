@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+html(lang="en")
+
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        meta(http-equiv="X-UA-Compatible", content="ie=Edge")
+        title jQuery 학습
+        link(rel="stylesheet", href="/node_modules/bulma/css/bulma.css")
+        link(rel="stylesheet", href="./css/main.css")
+
+        //- Load local jQuery
+        script(src="/node_modules/jquery/dist/jquery.min.js")
+        //- Load CDN jQuery
+        //- script(src="//unpkg.com/jquery") // CDN
+
+        script.
+            // 팩토리 함수에 함수를 전달하는 경우
+            // 문서가 준비되면 (document ready) 콜백함수 코드 실행
+            // - jQuery(document).ready(function($){})
+            // - jQuery.noConflict()(function($){
+            // -    console.log('DOM is Ready!!!');
+            // -    $('body').children().attr('class', 'body-children'); // 기존 클래스 값 제거하고 새로운 값으로 대치
+            // -    $('body').children().addClass('body-children'); // 기존 클래스 값 뒤에 새로운 값 추가
+            // - });
+    body
+
+        .app.container.wrapper.yamoo9-code
+            .columns
+                .column.is-6.main
+                    h1.title.is-1 Hi jQuery :-)
+                    p.subtitle.is-4 write less do more.
+                    
+                    // 데이터 정의
+                    - 
+                        var accordion_data = { 
+                            'general': {
+                                'links': ['dashboard', 'customers']
+                            },
+                            'administration': {
+                                'links': ['team settings', 'manage your team']
+                            }
+                        }
+                    
+                    // 믹스인 정의
+                    mixin accordion(data)
+                        article.ui-accordion.menu.box
+                            each links, label in data
+                                h4.menu-label 
+                                    a.box(href)= label
+                                ul.menu-list
+                                    each link in links
+                                        li
+                                            each content in link
+                                                a(href)= content
+
+                    // 믹스인 사용                            
+                    +accordion(accordion_data)
+                    +accordion(accordion_data)
+                
+                
+                
+                .column.is-4
+                    button.button.is-primary.toggle-box(type="button") 
+                        | toggle 
+                        strong .box
+                        | Elements
+
+                    p.box Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi nulla iure architecto, odio id, eaque nobis consectetur eum, sit asperiores saepe adipisci neque ipsum accusantium facere? Ea, repudiandae a quisquam! Dolorem ex, eveniet provident quidem facilis voluptatibus architecto voluptate minus?
+                    p.box Quam alias, odio? Reiciendis, ratione quia facilis perspiciatis placeat aliquam commodi, neque incidunt labore natus. Nesciunt, facere eum blanditiis tempora, ex eligendi quas magni numquam minus suscipit consectetur enim corporis excepturi officia culpa mollitia fuga assumenda modi necessitatibus asperiores delectus.
+                    p.box Delectus eius, rerum dicta dolor quisquam, doloribus voluptatem assumenda dolore natus dolores eveniet temporibus officia ea perferendis vel ab illum tenetur odit expedita quibusdam inventore eligendi. Quos voluptates quo culpa totam, laboriosam, distinctio laborum perferendis excepturi voluptate asperiores ex vero.
+                    p.box Illo quas, nobis nostrum quos incidunt fugiat soluta! Illo minus eum minima consequatur eligendi, ipsum nobis labore reprehenderit enim possimus, aliquam esse. Asperiores cupiditate, dolore aut non dolores vero sit quaerat nisi delectus, eos perspiciatis, facere autem a voluptate odit.
+                    p.box Ducimus, modi, dolores. Facere dolor illo voluptatem iusto obcaecati assumenda similique, deserunt doloribus soluta. Doloribus qui quisquam cum sequi minus saepe totam nesciunt veritatis quod. Dolorem nulla iure illum, itaque quidem animi autem iste numquam praesentium, maiores quo alias nisi.
+                    p.box Voluptatem deleniti neque doloribus, quo similique error aperiam harum eos molestiae non est sapiente quaerat eius necessitatibus aliquid hic rerum accusantium corrupti sed, voluptatum? Ut aperiam adipisci vero ea beatae explicabo quibusdam eligendi, facere alias. Sed, minima, doloremque. Maxime, omnis.
+                    p.box At obcaecati necessitatibus rem, nesciunt animi, hic iste quo, a tempore in, nihil sunt soluta mollitia ratione. Iure totam impedit, facere voluptatum molestias pariatur repellendus veritatis officia quaerat enim non, at laudantium quos, reiciendis est ad excepturi quibusdam dicta commodi.
+                    p.box Beatae, repellendus, odio. Tenetur natus fugiat libero repudiandae cum iusto ab odio quos, amet nulla unde ut quae quo laudantium nihil, temporibus aliquid vero ex explicabo. Esse nisi necessitatibus qui, officiis odit enim labore illo aspernatur excepturi debitis. Aliquam, nisi.
+                   
+       
+        script(src="./js/main.js")
+    

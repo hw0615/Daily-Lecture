@@ -1,0 +1,27 @@
+# jQuery 공부한 내용
+
+- [ ] [Core](http://api.jquery.com/category/core/)
+  - [x] `jQuery()`: 팩토리 함수
+  - [x] `jQuery.noConflict()`: `$` 충돌 방지 유틸리티 메서드
+  - [x] `jQuery.holdReady()`: Document Ready 홀딩 유틸리티 메서드
+- [ ] [Events](http://api.jquery.com/category/events/)
+  - [x] `.ready()`: Document Ready 인스턴스 메서드
+- [ ] [Attributes](http://api.jquery.com/category/attributes/)
+  - [x] `.attr()`: 속성 제어 인스턴스 메서드
+- [ ] [Data](http://api.jquery.com/category/data/)
+  - [x] `.data()`: 데이터 제어 인스턴스 메서드
+- [ ] [CSS](http://api.jquery.com/category/css/)
+  - [x] `.hasClass()`: class 속성 확인 인스턴스 메서드
+  - [x] `.addClass()`: class 속성 추가 인스턴스 메서드
+  - [x] `.removeClass()`: class 속성 제거 인스턴스 메서드
+  - [x] `.toggleClass()`: class 속성 토글 인스턴스 메서드
+- [ ] [Manipulation](http://api.jquery.com/category/manipulation/)
+  - [x] `.prepend()` | `.prependTo()`: 첫번째 자식 요소로 삽입 인스턴스 메서드
+  - [x] `.append()` | `.appendTo()`: 마지막 자식 요소로 삽입 인스턴스 메서드
+- [ ] [Effects](http://api.jquery.com/category/effects/)
+  - [x] `.show()`: 보임 인스턴스 메서드
+  - [x] `.hide()`: 감춤 인스턴스 메서드
+- [ ] [Ajax](http://api.jquery.com/category/ajax/)
+  - [x] `jQuery.ajax()`: Low Level 유틸리티 메서드
+  - [x] `jQuery.get()`: 단축 GET 유틸리티 메서드
+  - [x] `jQuery.post()`: 단축 POST 유틸리티 메서드

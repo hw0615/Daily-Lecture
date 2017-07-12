@@ -1,0 +1,3 @@
+html{overflow-y:scroll;font-size:100%}body{margin:0;font:87.5%/1.5 "Spoqa Han Sans", Sans-Serif}.app{margin-top:40px}.main{padding:1.4em;background:#fff;transition:all 0.4s ease-out}.main.is-fixed{position:fixed;z-index:1000;top:0;left:0;right:0;background:rgba(255,255,255,0.6);backdrop-filter:blur(2px)}.dim{position:fixed;z-index:10000;top:0;right:0;left:0;bottom:0;background:rgba(0,0,0,0.567)}.hide{display:none}
+
+/*# sourceMappingURL=main.css.map */

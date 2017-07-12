@@ -1,0 +1,32 @@
+html
+    overflow-y: scroll
+    font-size: 100%
+body
+    margin: 0
+    font: 87.5%/1.5 "Spoqa Han Sans", Sans-Serif
+
+.app
+    margin-top: 40px
+
+.main
+    padding: 1.4em
+    background: rgba(#fff, 1)
+    transition: all 0.4s ease-out
+    &.is-fixed
+        position: fixed
+        z-index: 1000
+        top: 0
+        left: 0
+        right: 0
+        background: rgba(#fff, 0.6)
+        backdrop-filter: blur(2px)
+.dim
+    position: fixed
+    z-index: 10000
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    background: rgba(#000, 0.567)
+.hide
+    display: none;

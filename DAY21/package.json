@@ -1,0 +1,27 @@
+{
+  "name": "jquery-reference",
+  "version": "0.0.1",
+  "description": "jQuery 학습을 위한 프로젝트",
+  "scripts": {
+    "dev": "node_modules/.bin/npm-run-all --parallel --continue-on-error pug sass babel serve",
+    "serve": "node_modules/.bin/live-server --port=3001 --cors",
+    "pug": "node_modules/.bin/pug lecture/pug -w --out lecture",
+    "sass": "node_modules/.bin/node-sass -wr --output-style compressed -o lecture/css --source-map true --source-map-contents lecture/sass",
+    "babel": "node_modules/.bin/babel -w lecture/es6 -d lecture/js"
+  },
+  "dependencies": {
+    "bulma": "^0.4.3",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "babel": {
+    "presets": ["env"]
+  }
+}
