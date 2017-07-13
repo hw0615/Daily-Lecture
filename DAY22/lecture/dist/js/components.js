@@ -20,7 +20,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         throw '빈 문자열 입니다.';
       }
       if (!this) {
-        throw 'new Notification()으로 실행해 주세요';
+        throw 'new Notification()으로 실행해주세요';
       }
       this.$els = $(selector);
       this.$els.each(function (i) {
@@ -68,8 +68,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 //    buttons.on('click', function(){
 //      $('.is-active').removeClass('is-active');
 //    })
-
-
 // })(window, window.jQuery);
 
 
@@ -92,21 +90,54 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   });
 
   // Modal 요소 표시 상태 제어 함수
+
 });(function (global, $) {
   'use strict';
 
   // 생성자 함수
 
-  function Modal(selector) {
-    this.$els = $(selector);
+  function Modal(el) {
+    // 검증 패스~
+    // $.type(el) !== 'nodelist'
+    this.$el = $(el);
+    // 이벤트 바인딩
+    this.$el.find('.delete, .is-cancel, .modal-background').on('click', this.close.bind(this));
+    // .on('click', $.proxy(this.close, this));
   }
 
   // 프로토타입 객체
-  Modal.prototype.open = function () {};
-  Modal.prototype.close = function () {};
+  Modal.prototype.open = function () {
+    this.$el.addClass('is-active');
+  };
+  Modal.prototype.close = function () {
+    this.$el.removeClass('is-active');
+  };
 
   // 외부에 공개
-  var fds_modal = new Modal('.fds-modal');
+  $.Modal = Modal;
+})(window, window.jQuery);
+
+(function (global, $) {
+  'use strict';
+
+  // .fds-modal 요소들을 순환하여
+  // 각각 jQuery.Modal 객체를 생성
+  // jQuery.data() 를 사용해서 $modal 이름으로 기억해둔다.
+  // var $fds_modals = $('.fds-modal').each(function(index, el){
+  //   $.data(el, '$modal', new $.Modal(el));
+  // });
+
+  // 버튼 이벤트 핸들링
+
+  var modal = new $.Modal(document.querySelector('.fds-modal'));
+
+  $('.show-modal').on('click', function () {
+    modal.open();
+  });
+
+  $('.hide-modal').on('click', function () {
+    modal.close();
+  });
 })(window, window.jQuery);
 
 (function (global, $) {
@@ -116,16 +147,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
   var filtered_data = void 0,
       original_data = void 0;
-  var limit_count = 10;
-
+  var limit_count = 30;
   // 지역 내 사용할 함수
   function limitTo(data, n) {
     return data.slice(0, n);
   }
+  // $.limitTo = limitTo;
 
   // Ajax를 사용해서 API로부터 데이터를 가져오기
   var api_address = 'https://api.myjson.com/bins/f0etn';
-
   $.get(api_address).then(function (data) {
     // 39 총 데이터 중에 사용하고자 하는 데이터를 제한
     original_data = data;
@@ -144,23 +174,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var image = item.image;
       var bio = item.bio;
       // 템플릿에 데이터 바인딩
-      media_template += '\n        <article class="media">\n          <figure class="media-left">\n            <p class="image is-64x64">\n              <img src="' + image + '" alt>\n            </p>\n          </figure>\n          <div class="media-content">\n            <div class="content">\n              <p>\n                <strong>' + name + '</strong> <small>@' + name + '</small>\n                <br>\n                ' + bio + '\n              </p>\n            </div>\n          </div>\n          <div class="media-right">\n            <button class="delete" type="button" aria-label="button"></button>\n          </div>\n        </article>\n      ';
+      media_template += '\n        <article class="media box">\n          <figure class="media-left">\n            <p class="image is-64x64">\n              <img src="' + image + '" alt>\n            </p>\n          </figure>\n          <div class="media-content">\n            <div class="content">\n              <p>\n                <strong>' + name + '</strong> <small>@' + id + '</small>\n                <br>\n                ' + bio + '\n              </p>\n            </div>\n          </div>\n          <div class="media-right">\n            <button class="delete" type="button" aria-label="remove media object"></button>\n          </div>\n        </article>\n      ';
     });
-
     var $media_group = $('.media-object-container').html(media_template);
     bindEvents($media_group);
   }
 
   function bindEvents($container) {
     var $del_btns = $container.find('.delete');
-    $del_btns.on('click', function () {
-      var $remove_el = $(this).parents('.media.box');
-      $remove_el.css('position', 'relative').animate({
-        'right': '-800px',
-        'height': 0
-      }, 1000, function () {
-        $remove_el.remove();
-      });
+    $del_btns.each(function (index) {
+      var $del_btn = $del_btns.eq(index);
+      var $remove_el = $del_btn.parents('.media.box');
+      $del_btn.on('click', animateRemoveMediaObject.bind($remove_el));
     });
+  }
+
+  function animateRemoveMediaObject() {
+    var _this2 = this;
+
+    this.css('position', 'relative').animate({
+      height: "toggle",
+      opacity: "toggle",
+      x: 1000
+    }, { step: function step(now, fx) {
+        return _this2.css('transform', 'translateX(' + now + 'px)');
+      } });
   }
 })(window, window.jQuery);
