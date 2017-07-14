@@ -1,0 +1,99 @@
+//- 카드 컴포넌트
+mixin card(headline)
+  .card(class!=attributes.class)
+    header.card-header
+      h4.card-header-title= headline
+      a.card-header-icon.card-toggle-btn(
+        href=""
+        role="button"
+        aria-label="close content"
+      )
+        span.icon
+          i.fa.fa-angle-down(aria-hidden="true")
+    .card-content
+      .content
+        block
+    footer.card-footer
+      a(href="" role="button").card-footer-item.card-save-btn Save
+      a(href="" role="button").card-footer-item.card-edit-btn Edit
+      a(href="" role="button").card-footer-item.card-delete-btn Delete
+//---------------------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible", content="ie=Edge")
+    title jQuery 학습
+    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet", href="/node_modules/bulma/css/bulma.css")
+    link(rel="stylesheet", href="./css/main.css")
+
+  body
+
+    .app.container.wrapper
+      .columns
+        .column.is-6
+
+          +card('twitter')(class="twitter-card")
+            p
+              | Twitter ipsum dolor sit amet, consectetur adipiscing elit.
+              | Phasellus nec iaculis mauris.
+            a(href="https://twitter.com/bulmaio/") @bulmaio
+            |  |
+            a  #css
+            |,
+            a  #responsive
+            br
+            time(pubdate="2016-01-01") 11:09 PM - 1 Jan 2016
+
+          br
+
+          +card('facebook')(class="facebook-card")
+            p
+              | Facebook ipsum dolor sit amet, consectetur adipiscing elit.
+              | Phasellus nec iaculis mauris.
+            a(href="https://facebook.com/yamoo9/") @yamoo9
+            |  |
+            a  #css
+            |,
+            a  #responsive
+            br
+            time(pubdate="2016-01-01") 11:09 PM - 1 Jan 2016
+
+
+          // 탭 컴포넌트
+          .demo-radio.tabs.is-boxed
+            ul(rol="tablist")
+              li.is-active
+                a(role="tab")
+                  span.icon.is-small
+                    i.fa.fa-image
+                  span Pictures
+              li
+                a(role="tab")
+                  span.icon.is-small
+                    i.fa.fa-music
+                  span Music
+              li
+                a(role="tab")
+                  span.icon.is-small
+                    i.fa.fa-film
+                  span Videos
+              li
+                a(role="tab")
+                  span.icon.is-small
+                    i.fa.fa-file-text-o
+                  span Documents
+
+
+
+
+
+
+
+
+    script(src="/node_modules/jquery/dist/jquery.min.js")
+    script(src="./js/jquery.extentions.js")
+    script(src="./js/main.js")

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery Swipe 플러그인</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background: #101010;
+    }
+    .touchzone {
+      position: absolute;
+      top: 20%;
+      right: 20%;
+      left: 20%;
+      bottom: 20%;
+      padding-top: 1.5em;
+      padding-left: 1.5em;
+      border-radius: 10px;
+      background: #2f2f2f;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 100;
+    }
+    .touchzone ul {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="touchzone">
+    <ul>
+      <li>Type: <strong class="type">Inital</strong></li>
+      <li>Direction: <strong class="direction">Inital</strong></li>
+      <li>Distance X: <strong class="x">0</strong></li>
+      <li>Distance Y: <strong class="y">0</strong></li>
+    </ul>
+  </div>
+
+<script src="https://unpkg.com/jquery"></script>
+<script src="./jquery.swipe.study.js"></script>
+<script>
+  /**
+   * 사용 방법:
+   * .swipe()에 함수를 전달하거나, 객체를 전달하거나.
+   * 함수의 경우 - start, move, end 상태 모두 일괄적으로 적용된다.
+   * 객체의 경우 - start, move, end 키 값으로 각각 함수를 전달해 세부 실행이 가능하다.
+   *
+   * 전달인자:
+   * 첫번째 인자 - 커스텀 이벤트 타입 및 방향, 이동 거리 정보 등을 제공한다.
+   * 두번째 인자 - 오리지널 이벤트 객체
+   *
+   * this      - jQuery 객체 (이벤트 대상을 감싼)
+   */
+  // $('.touchzone').swipe(function(o, e){
+  //   this.find('.type').text(o.type);
+  //   this.find('.direction').text(o.direction);
+  //   this.find('.x').text(o.x);
+  //   this.find('.y').text(o.y);
+  // });
+  
+  // $('.touchzone').swipe();
+
+</script>
+</body>
+</html>
