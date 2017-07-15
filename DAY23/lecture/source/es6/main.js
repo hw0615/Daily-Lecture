@@ -61,7 +61,7 @@
     init: function(){
       // card {} 내부 버튼 컴포넌트 참조
       this._$toggle = this._$card.find('.card-toggle-btn');
-      this._$save   = this._$card.find('.card-save-btn');
+      this._$save   = this._$card.find('.card-save-btn');  
       this._$edit   = this._$card.find('.card-edit-btn');
       this._$delete = this._$card.find('.card-delete-btn');
       // 이벤트 바인딩

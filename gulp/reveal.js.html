@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://seungha-kim.github.io/gulp-lecture/ -->
+<html class=" js no-mobile desktop no-ie chrome chrome59 gulp-lecture-section gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions no-touch no-retina fontface domloaded w-1280 gt-240 gt-320 gt-480 gt-640 gt-768 gt-800 gt-1024 lt-1440 lt-1680 lt-1920 no-portrait landscape" id="index-page"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="./reveal.js_files/reveal.css">
+  <link rel="stylesheet" href="./reveal.js_files/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="./reveal.js_files/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script><link rel="stylesheet" type="text/css" href="./reveal.js_files/paper.css"><script type="text/javascript" src="./reveal.js_files/marked.js"></script><script type="text/javascript" src="./reveal.js_files/markdown.js"></script><script type="text/javascript" src="./reveal.js_files/notes.js"></script><script type="text/javascript" src="./reveal.js_files/highlight.js"></script>
+</head>
+
+<body>
+  <div class="reveal slide center ready" role="application" data-transition-speed="default" data-background-transition="fade">
+    <div class="slides" style="width: 960px; height: 700px; left: 50%; top: 50%; bottom: auto; right: auto; transform: translate(-50%, -50%) scale(0.868114);">
+      <section class="past" style="top: 257px; display: none;" hidden="" aria-hidden="true">
+        <h1>gulp 특강</h1>
+      </section>
+
+      <section class="past" style="top: 179px; display: none;" hidden="" aria-hidden="true">
+        <h2>gulp</h2>
+        <p>= 웹 개발을 위한 <em>빌드 도구</em></p>
+        <p>= 개발 과정에서 제작한 원본 소스를,<br> 실행 및 배포할 수 있는 형태로 <em>변환</em>하는 도구</p>
+      </section>
+
+      <section class="stack past" style="top: 0px; display: none;" data-previous-indexv="0" hidden="" aria-hidden="true">
+        <section class="" style="top: 280px; display: none;" aria-hidden="true">
+          <h2>빌드 도구의 필요성</h2>
+        </section>
+        <section class="future" style="top: 233.5px; display: none;" hidden="" aria-hidden="true">
+          <h3>점점 복잡해지는 웹개발</h3>
+          <ul>
+            <li>Pug, Sass, TypeScript 등의 확장 언어</li>
+            <li>디버깅을 위한 source map</li>
+          </ul>
+        </section>
+        <section class="future" style="top: 152.5px; display: none;" hidden="" aria-hidden="true">
+          <h3>최적화</h3>
+          <ul>
+            <li>압축</li>
+            <li>이미지 크기 변환</li>
+            <li>파일 합치기</li>
+            <li>사용되지 않는 코드 제거</li>
+            <li>...</li>
+          </ul>
+        </section>
+        <section class="future" style="top: 223.5px; display: none;" aria-hidden="true" hidden="">
+          <h3>빌드 과정의 자동화</h3>
+          <p>각 단계를 하나하나 수작업으로 실행시킬 수 있지만, <br><em>비효율적</em></p>
+        </section>
+      </section>
+
+      <section class="stack past" style="top: 0px; display: block;" data-previous-indexv="0" hidden="" aria-hidden="true">
+        <section class="" style="top: 226px; display: block;" aria-hidden="true">
+          <h2>gulp의 특징</h2>
+          <ul>
+            <li>JS 코드를 이용해 빌드 과정 정의</li>
+            <li>Node.js Stream 활용 - 디스크 쓰기를 최소화</li>
+          </ul>
+        </section>
+        <section class="future" style="top: 152px; display: none;" aria-hidden="true" hidden="">
+          <h2>Grunt</h2>
+          <ul>
+            <li>gulp가 나오기 전에 널리 쓰이던 빌드 도구</li>
+            <li>JSON 문서로 빌드 과정 정의 - 유연하지 못함</li>
+            <li>중간 과정 파일을 디스크에 씀 - 느림</li>
+          </ul>
+          <p>=&gt; gulp 위주로 생태계가 재편됨</p>
+        </section>
+      </section>
+
+      <section class="past" style="top: 251.5px; display: block;" hidden="" aria-hidden="true">
+        <h2>커맨드라인 도구 설치</h2>
+        <pre><code data-trim="" class="bash hljs">npm install --global gulp-cli</code></pre>
+      </section>
+
+      <section class="present" style="top: 46px; display: block;">
+        <h2>첫 gulpfile.js</h2>
+        <pre><code data-trim="" class="bash hljs">$ mkdir gulp-practice <span class="hljs-comment"># 프로젝트 폴더 생성</span>
+$ <span class="hljs-built_in">cd</span> gulp-practice
+$ npm init
+$ npm install --save-dev gulp <span class="hljs-comment"># 패키지 설치</span>
+$ code .</code></pre>
+        <pre><code data-trim="" class="javascript hljs"><span class="hljs-comment">// gulpfile.js</span>
+<span class="hljs-keyword">const</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+
+<span class="hljs-comment">// default task</span>
+gulp.task(<span class="hljs-string">'default'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello!'</span>);
+});</code></pre>
+        <pre><code data-trim="" class="bash hljs">$ gulp default
+$ gulp <span class="hljs-comment"># default task 실행</span></code></pre>
+      </section>
+
+      <section class="future" style="top: 74.5px; display: block;" hidden="" aria-hidden="true">
+        <h2>gulp-concat</h2>
+        <pre><code data-trim="" class="bash hljs">$ npm install --save-dev gulp-concat</code></pre>
+        <pre><code data-trim="" class="javascript hljs">...
+<span class="hljs-keyword">const</span> concat = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-concat'</span>); <span class="hljs-comment">// concat 플러그인</span>
+...
+<span class="hljs-comment">// concat task</span>
+gulp.task(<span class="hljs-string">'concat'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'./app/**/*.js'</span>) <span class="hljs-comment">// 변환할 파일 선택</span>
+    .pipe(concat(<span class="hljs-string">'build.js'</span>)) <span class="hljs-comment">// 플러그인 적용</span>
+    .pipe(gulp.dest(<span class="hljs-string">'./dist/'</span>)); <span class="hljs-comment">// 변환된 파일이 저장될 폴더 지정</span>
+})
+...
+<span class="hljs-comment">// default task</span>
+gulp.task(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'concat'</span>]); <span class="hljs-comment">// task 간 의존관계 - 순서 없음</span></code></pre>
+      </section>
+
+      <section class="future" style="top: 85.5px; display: block;" hidden="" aria-hidden="true">
+        <h2>pipe</h2>
+        <img src="./reveal.js_files/pipe.png" alt="">
+      </section>
+
+      <section class="future" style="top: 280px; display: none;" hidden="" aria-hidden="true">
+        <h2><a href="https://gist.github.com/torgeir/8507130" target="_blank">gulpfile.js 예제</a></h2>
+      </section>
+
+      <section class="future" style="top: 257px; display: none;" hidden="" aria-hidden="true">
+        <h1>break</h1>
+      </section>
+
+      <section class="future" style="top: 118px; display: none;" hidden="" aria-hidden="true">
+        <h2><a href="https://github.com/seungha-kim/gulp-exercise" target="_blank">HTML &amp; Sass 실습</a></h2>
+        <ul>
+          <li>HTML simple copy</li>
+          <li><a href="https://www.npmjs.com/package/gulp-clean" target="_blank">gulp-clean</a></li>
+          <li><a href="https://www.npmjs.com/package/run-sequence" target="_blank">run-sequence</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-sass" target="_blank">gulp-sass</a></li>
+          <li><a href="https://www.npmjs.com/package/gulp-sass#source-maps" target="_blank">gulp-sourcemaps</a></li>
+          <li><a href="https://browsersync.io/docs/gulp#gulp-sass-css" target="_blank">gulp.watch &amp; browsersync</a></li>
+        </ul>
+      </section>
+
+      <section class="future" style="top: 257px; display: none;" hidden="" aria-hidden="true">
+        <h1>break</h1>
+      </section>
+
+      <section class="future" style="top: 280px; display: none;" hidden="" aria-hidden="true">
+        <h2><a href="https://github.com/google/web-starter-kit" target="_blank">web starter kit</a></h2>
+        <aside class="notes">
+          gulp가 긴 프로젝트에서도 쓰이는 경우가 있긴 하지만 아마 급하게 만드는 경우가 더 많을 텐데.
+          gulpfile.js는 자주 작성하는 것이 아니기에 매번 gulpfile.js를 작성하는 것은 불편하고 다 기억하지도 못함.
+          미리 만들어져있는 걸 쓰자!
+        </aside>
+      </section>
+
+      <section class="future" style="top: 10px; display: none;" hidden="" aria-hidden="true">
+        <h2>built-in features</h2>
+        <ul>
+          <li>ESLint</li>
+          <li>Sass</li>
+          <li><a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a></li>
+          <li>Babel</li>
+          <li>UglifyJS</li>
+          <li>Offline support</li>
+          <li>imagemin</li>
+          <li><a href="https://www.npmjs.com/package/gulp-useref" target="_blank">useref</a></li>
+          <li>Browsersync</li>
+          <li>...</li>
+        </ul>
+        <aside class="notes">
+          service worker...??
+          매번 요구사항을 완벽히 충족시킬 수는 없을 테니 gulpfile을 조금씩 수정할 필요가 있을 것임.
+        </aside>
+      </section>
+
+      <section class="future" style="top: 199px; display: none;" hidden="" aria-hidden="true">
+        <h2>실습 준비</h2>
+        <ul>
+          <li><a href="https://developers.google.com/web/tools/starter-kit/?hl=ko" target="_blank">Download link</a></li>
+          <li>압축 풀기</li>
+          <li>npm install</li>
+        </ul>
+      </section>
+
+      <section class="future" style="top: 118px; display: none;" hidden="" aria-hidden="true">
+        <h2>web starter kit - tasks</h2>
+        <dl>
+          <dt>gulp serve</dt>
+          <dd>개발용 빌드로 서버 실행</dd>
+          <dt>gulp serve:dist</dt>
+          <dd>배포용 빌드로 서버 실행</dd>
+          <dt>gulp (default)</dt>
+          <dd>배포용 빌드 실행</dd>
+        </dl>
+        <aside class="notes">배포용 빌드는 html 압축, 이미지 압축같은 것을 포함하도록 되어 있다.</aside>
+      </section>
+
+      <section class="future" style="top: 127px; display: none;" hidden="" aria-hidden="true">
+        <aside class="notes">gh-pages라는 브랜치에 푸시하면 웹페이지를 호스팅해주는 것을 이용한 것임.</aside>
+        <h2><a href="https://medium.com/superhighfives/deploying-to-github-pages-with-gulp-c06efc527de8" target="_blank">github pages에 배포하기</a></h2>
+        <pre><code data-trim="" class="hljs q">$ npm install --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> gulp-gh-pages</code></pre>
+        <pre><code data-trim="" class="hljs coffeescript"><span class="hljs-regexp">//</span> gulpfile.js에 추가
+gulp.task(<span class="hljs-string">'deploy'</span>, [<span class="hljs-string">'default'</span>], <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+<span class="hljs-keyword">return</span> gulp.src(<span class="hljs-string">'dist/**/*'</span>)
+  .pipe($.ghPages());
+});</code></pre>
+        <pre><code data-trim="" class="hljs vala"><span class="hljs-meta"># .gitignore에 추가</span>
+.publish</code></pre>
+      </section>
+
+      <section class="future" style="top: 47.5px; display: none;" hidden="" aria-hidden="true">
+        <aside class="notes">windows에서 deploy 에러가 나는 분은 default task에서 'lint'를 지우고 하면 될 것임</aside>
+        <h2><a href="https://medium.com/superhighfives/deploying-to-github-pages-with-gulp-c06efc527de8" target="_blank">github pages에 배포하기</a></h2>
+        <pre><code class="bash hljs" data-trim="">$ <span class="hljs-comment"># git 저장소 만들기</span>
+$ git init
+$ git add .
+$ git commit -m <span class="hljs-string">"initial"</span>
+$ git remote add origin [github에서 만든 저장소 주소]
+$ git push -u origin master</code></pre>
+<pre><code class="bash hljs" data-trim="">$ <span class="hljs-comment"># gh-pages 브랜치 만들기</span>
+$ git checkout --orphan gh-pages
+$ git rm -rf .
+$ touch README.md
+$ git add README.md
+$ git commit -m <span class="hljs-string">"Initial commit"</span>
+$ git push --set-upstream origin gh-pages
+$ git checkout master
+$ gulp deploy <span class="hljs-comment"># https://[아이디].github.io/[저장소 이름] 접속</span></code></pre>
+      </section>
+    </div>
+  <div class="backgrounds"><div class="slide-background past" data-loaded="true" style="display: none;"></div><div class="slide-background past" data-loaded="true" style="display: none;"></div><div class="slide-background stack past" data-loaded="true" style="display: none;"><div class="slide-background present" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div></div><div class="slide-background stack past" data-loaded="true" style="display: block;"><div class="slide-background present" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div></div><div class="slide-background past" data-loaded="true" style="display: block;"></div><div class="slide-background present" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: block;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div><div class="slide-background future" data-loaded="true" style="display: none;"></div></div><div class="progress" style="display: block;"><span style="width: 548.571px;"></span></div><aside class="controls" style="display: block;"><button class="navigate-left enabled" aria-label="previous slide"></button><button class="navigate-right enabled" aria-label="next slide"></button><button class="navigate-up" aria-label="above slide" disabled="disabled"></button><button class="navigate-down" aria-label="below slide" disabled="disabled"></button></aside><div class="slide-number" style="display: none;"></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px 1px 1px 1px);">
+        첫 gulpfile.js
+        $ mkdir gulp-practice # 프로젝트 폴더 생성
+$ cd gulp-practice
+$ npm init
+$ npm install --save-dev gulp # 패키지 설치
+$ code .
+        // gulpfile.js
+const gulp = require('gulp');
+
+// default task
+gulp.task('default', function() {
+  console.log('hello!');
+});
+        $ gulp default
+$ gulp # default task 실행
+      </div></div>
+
+  <script src="./reveal.js_files/head.min.js"></script>
+  <script src="./reveal.js_files/reveal.js"></script>
+
+  <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+  </script>
+
+
+
+</body></html>

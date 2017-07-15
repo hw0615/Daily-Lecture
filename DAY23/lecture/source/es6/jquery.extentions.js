@@ -38,9 +38,9 @@
   'use strict';
    
   // .radioClass() 
-  
+
   // jQuery 인스턴스 메서드(플러그인) 작성 패턴
-  if ( $.fn.radioClass ) {
+  if ( !$.fn.radioClass ) {
     $.fn.radioClass = function(name='active') {
       // this === jQuery {}
       // jQuery의 능력을 사용할 수 있다.
