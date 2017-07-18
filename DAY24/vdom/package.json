@@ -1,0 +1,17 @@
+{
+  "name": "budo-virtual-dom",
+  "version": "0.0.1",
+  "description": "Browserify를 사용한 서버 환경에서 Virtual DOM 실습",
+  "private": true,
+  "scripts": {
+    "budo": "node_modules/.bin/budo index.js --open --live"
+  },
+  "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=4.0.0"
+  },
+  "devDependencies": {
+    "budo": "^10.0.0",
+    "virtual-dom": "^2.1.1"
+  }
+}
