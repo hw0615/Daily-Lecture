@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+html(lang="ko-KR")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title 조건부 렌더링 - Vue.js 프레임워크
+
+    link(rel="shortcut icon" type="image/x-icon" href="assets/favicon.png")
+    link(rel="stylesheet" href="css/main.css")
+
+    script(src="lib/vue.js")
+
+  body
+
+    #app.container(v-cloak)
+
+      button(
+        type="button"
+        v-on:click="destroyVueInstance"
+      ).delete Destroy
+
+      .columns
+        .column.is-10-mobile.is-offset-1-mobile.is-6-tablet
+          .message.is-info(v-show="!is_login")
+            .message-header
+              h3 로그인
+              button.delete(
+                type="button"
+                v-on:click="changeMode"
+              )
+            .message-body
+              p 컴퓨터 보안에서 로그인(영어: login, 문화어: 등록가입)과 로그아웃(logout)은 접근 허가 증명을 얻기 위해 사용자 인증으로 개인이 컴퓨터 시스템에 접근하는 작업을 말한다. 컴퓨터 보안에서 중요한 역할을 담당한다. 사용자는 접근을 얻기 위해 시스템에 로그인할 수 있으며 더 이상 필요하지 않을 때 로그아웃할 수 있다.
+
+          .message.is-primary(v-show="is_login")
+            .message-header
+              h3 {{ `${users[0].id}(${users[0].name})` }} 로그아웃
+              button.delete(
+                type="button"
+                v-on:click="changeMode"
+              )
+            .message-body
+              p 영어 낱말에서 로그 인(log in)은 동사를, 로그인(login)은 명사를 뜻하며, 로그 아웃(log out)과 로그아웃(logout)도 이와 마찬가지로 적용을 받는다. 또, 사인인(signin)과 사인아웃(signout), 로그온(logon)과 로그오프(logoff)라는 낱말은 로그인과 로그아웃의 다른 형태의 낱말이다.
+        .column.is-10-mobile.is-offset-1-mobile.is-4-tablet
+          div.card-wrapper(v-for="(user, index) in users")
+            .card
+              .card-content
+                .media
+                  .media-left
+                    figure.image.is-48x48
+                      img(
+                        src='http://bulma.io/images/placeholders/96x96.png'
+                        alt='Image'
+                      )
+                  .media-content
+                    p.title.is-4 {{ user.name }}
+                    p.subtitle.is-6 {{ user.id }}
+                    //- p {{ index }}
+                .content {{ user.bio }}
+                  a @bulmaio
+                  | .
+                  a #css
+                  a #responsive
+                  br
+                  small 11:09 PM - 1 Jan 2016
+            hr(v-if="index < (users.length - 1)")
+        .column.column.is-10-mobile.is-offset-1-mobile.is-2-tablet
+
+          div.numbers
+            //- a(href="#" v-for="i in 10" v-text="i")
+            a(href="#" v-for="n in numbers") {{ n }}
+
+          hr
+
+          input(
+            v-on:input="addNewContent"
+            v-bind:value="new_content"
+            type="search"
+            value="나는 HTML에서 작성한 value이다."
+          ).add-content-input.input
+          button(type="button").add-content-btn.is-primary.button Add
+          ul.metopo
+            li(v-for="(value, key, index) in metopo")
+              strong Index: {{ index }}
+              p Key:
+                code {{ key }}
+              p Value:
+                code {{ value }}
+              hr(v-if="index < 1")
+
+          ul.template-demo
+            template(v-for="n in numbers/10*3")  
+              li one
+              li two
+              li three
+            
+    
+    script(src="lib/jquery.min.js")
+    script(src="js/conditional.js")

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+html(lang="ko-KR")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title 주제 - Vue.js 프레임워크
+
+    link(rel="shortcut icon" type="image/x-icon" href="assets/favicon.png")
+    link(rel="stylesheet" href="css/main.css")
+
+  body
+
+    //- Vue 객체가 마운트하는 요소(실제 문서객체)
+    #app.container(v-cloak)
+      .columns
+        .column.is-3
+          h2(v-once) {{ info.author }}
+          p {{ info.author }}
+        .column.is-6
+          .content
+            // JavaScript 식(Expression)은 사용 가능
+            // 머스타치 문법을 사용한 예
+            p
+              | Mustache:
+              | {{ info.author + ', ' + info.org }}<br>
+              | 머스타치 문법은 콧수염 같아서~ 붙여진 이름
+            // 디렉티브를 사용한 예
+            // v-text 디렉티브 내부의 콘텐츠는 제거 됨.
+            p(v-text="info.author + ', ' + info.org") V-Directive
+            p(v-text="`${info.author}, ${info.org}`") V-Directive + ES 6 String Template
+
+            hr
+
+            div(class="using-raw-html" v-html="raw_html")
+
+            hr
+
+            //- v-pre 디렉티브는 컴파일 무시(자식까지 포함)로 컴파일 속도를 UP!
+            //- ul.components(v-pre)
+            ul.components
+              // Sandbox 패턴을 사용하고 있어서 컴파일 과정에서 허용된 객체가 아닌 경우 오류 발생!
+              // 허용된 객체는 Math, Date 허용. Vue{} 인스턴스 객체의 data, methods로 등록된 것만 가능!
+              //- li 전역의 app에 접근이 가능한가?: {{ app.info.author }}
+              li 올 해 년도는?:<br>
+                strong {{ new Date().getFullYear() }}
+              li 컴포넌트 Zero:<br>
+                strong {{ components[0] }}
+              li 컴포넌트 One:<br>
+                strong {{ components[1] }}
+              li 컴포넌트 Two:<br>
+                strong {{ components[2] }}
+              li 컴포넌트 Three:<br>
+                strong {{ components[3] }}
+              li 컴포넌트 Four:<br>
+                strong {{ components[4] }}
+
+            // JavaScript 문(Statement)은 템플릿 컴파일 오류!
+            //- p {{ if ( typeof info === 'object' ) { console.log('true'); } }}
+            //- pre {{ info }}
+            //- h1.title.is-2 {{ info.author }}
+            //- h3.subtitle.is-4 {{ info.org }}
+    script(type="text/x-template" id="app-template")
+      #app.container.x-template
+        .columns
+          .column.is-6-mobile.is-offset-6-mobile
+            h1.title {{ info.author }}
+
+    script(src="lib/vue.js")
+    script(src="js/main.js")

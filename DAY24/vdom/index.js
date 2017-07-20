@@ -28,6 +28,7 @@ const createElement = require('virtual-dom/create-element');
 const diff          = require('virtual-dom/diff');
 const patch         = require('virtual-dom/patch');
 
+console.log(typeof h)
 // 데이터
 let count = 0;
 
