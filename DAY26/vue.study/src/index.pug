@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+html(lang="ko-KR")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title 주제 - Vue.js 프레임워크
+
+    link(rel="shortcut icon" type="image/x-icon" href="assets/favicon.png")
+    link(rel="stylesheet" href="css/main.css")
+
+  body
+
+    .project-team.container(v-cloak)
+      .columns
+        .hide.column.is-6
+          h1.title.is-3 {{ team.name }}
+          ul.team
+            li.message.is-danger.group(v-for="(group, i) in team.group")
+              .message-header
+                span.icon.is-small
+                  i.fa.fa-group(aria-hidden="true")
+                strong.title.is-4 Team {{ i + 1 }}
+              .message-body
+                ul.members
+                  li.member(v-for="(member, n) in group")
+                    strong.tag.is-danger {{ member }}
+                      button.is-small.delete(
+                        role="button"
+                        aria-label="제거"
+                        @click="excludeMember(i,n)"
+                        @keyup.shift.f2="excludeMember(i,n)"
+                      )
+        .hide.column.is-10-mobile.is-offset-1-mobile
+          h2.title.is-3 Plan 리스트
+          .plan-wrapper.columns
+            .column
+              .field
+                .control.is-medium(
+                  :class="{'is-loading': is_transfer}"
+                )
+                  label(for="plan_it").a11y-hidden 플랜
+                  input.input.is-medium(
+                    id="plan_it"
+                    type="input"
+                    @input="updatePlanIt"
+                    :value="plan_it"
+                    placeholder="Plan을 입력해주세요"
+                  )
+
+            .column
+              button.button.is-info(
+                type="button"
+                @click="addPlanIt"
+                :disabled="is_blank"
+              ) 등록
+          .columns
+            ul.plan-list.column.is-10
+              li.box.plan(v-for="(content,index) of plan")
+                label
+                  input(
+                    type="checkbox"
+                    v-model="content.done"
+                  )
+                  |  {{ content.it }}
+        .hide.column
+          ul.link-list
+            li(v-for="link in links")
+              a(
+                :href="link.href"
+                :target="link.external ? '_blank' : false"
+                :class="['yo-man',link.content,{'is-external': link.external}]"
+                v-text="link.content"
+                @click.prevent="toggleClass(link.content, $event)"
+              )
+
+          p {{ reverse_team_name }}
+          p {{ reverse_team_name }}
+        .column
+          //- h4.title.is-5 모든 숫자 데이터 출력
+          //- ul.original_numbers
+          //-   li(v-for="n in numbers")
+          //-     strong {{n}}
+          //- hr
+          //- h4.title.is-5 홀수만 필터링하여 출력
+          //- ul.filtered_numbers
+          //-   li(v-for="n in oddNumbers")
+          //-     strong {{n}}
+          h4.title.is-5 해야할 모든 일
+          ul.todos
+            li(v-for="doit in todos" v-show="!doit.finished")
+              label
+                input(type="checkbox" v-model="doit.finished")
+                | {{doit.what}}
+          hr
+          h4.title.is-5 수행한 일
+          ul.finished_todos
+            li(v-for="doit in finished_todos")
+              label
+                input(type="checkbox" v-model="doit.finished")
+                | {{doit.what}}
+
+    script(src="lib/jquery.min.js")
+    script(src="//unpkg.com/vue@2.4.1/dist/vue.js")
+    script(src="js/main.js")

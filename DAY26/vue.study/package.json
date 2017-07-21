@@ -1,0 +1,49 @@
+{
+  "name": "vue-lecture---pug-sass-es6-imagemin-live",
+  "version": "0.0.2",
+  "description": "Vue.js 학습을 위한 프로젝트",
+  "private": true,
+  "scripts": {
+    "start": "npm run clean && npm run npm-run-all -- jquery font-awesome bulma imagemin dev",
+    "npm-run-all": "node_modules/.bin/npm-run-all --parallel --continue-on-error",
+    "dev": "npm run npm-run-all -- pug sass babel sass-watch eslint-watch serve",
+    "serve": "node_modules/.bin/live-server --port=3001 --cors dist",
+    "pug": "node_modules/.bin/pug src -w --out dist",
+    "sass": "node_modules/.bin/node-sass --output-style compressed src/sass -o dist/css",
+    "sass-watch": "node_modules/.bin/node-sass -wr --output-style compressed -o dist/css --source-map true --source-map-contents src/sass",
+    "babel": "node_modules/.bin/babel -ws --minified src/es6 -d dist/js",
+    "imagemin": "node_modules/.bin/imagemin src/assets/**/* --out-dir=dist/assets",
+    "jquery": "mkdir -p dist/lib && cp node_modules/jquery/dist/jquery.min.js dist/lib/jquery.min.js",
+    "bulma": "mkdir -p src/lib/bulma && cp -r node_modules/bulma/sass src/lib/bulma && cp node_modules/bulma/bulma.sass src/lib/bulma/bulma.sass",
+    "font-awesome": "mkdir -p dist/fonts && mkdir -p src/lib/font-awesome && cp -r node_modules/font-awesome/scss/* src/lib/font-awesome && cp -r node_modules/font-awesome/fonts dist/",
+    "enlint-init": "node_modules/.bin/eslint --init",
+    "eslint": "node_modules/.bin/eslint src/es6/*.js",
+    "eslint-watch": "node_modules/.bin/esw -w src/es6/*.js --fix",
+    "clean": "rm -rf dist src/lib"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "bulma": "^0.4.3",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.2.0",
+    "eslint-watch": "^3.1.2",
+    "imagemin-cli": "^3.0.0",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}
