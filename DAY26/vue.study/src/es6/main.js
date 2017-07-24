@@ -9,18 +9,18 @@
   };
 
   // Firebase DB 통신 주소
-  let firebase_db = 'https://vue-planlist-938dc.firebaseio.com/planlist.json';
-
+  let firebase_db = 'https://vue-planlist.firebaseio.com/planlist.json';
 
   new Vue({
+
     el: '.project-team',
-    // lifeCycleHook
+
     created () {
-      console.log(this);
-      // Ajax 통신을 통해 Server(Firebase)로 부터 데이터를 GET 한 후, 
+      // Ajax 통신을 통해 Sever(Firebase)로부터 데이터를 GET 한 후,
       // Vue 인스턴스 데이터에 GET 한 콘텐츠를 할당(Assign)
       // this.getFirebasePlanData();
     },
+
     data: {
 
       team: {
@@ -37,7 +37,7 @@
           ['허우창', '정미주', '기미송']
         ]
       },
-      
+
       is_transfer: false,
       is_blank: true,
       plan_it: '',
@@ -65,20 +65,19 @@
         }
       ],
 
-      numbers: '1902 12 32 11 45 93 456 129 19 8 12'.split(' '),
+      numbers: '1902 12 32 11 45 90 456 129 19 8 12'.split(' '),
 
       todos: [
-        {finished: false, what:'도서 읽기'},
-        {finished: true, what:'이웃 돕기'},
-        {finished: false, what:'학원 등록'},
-        {finished: true, what:'영어 스터디 모임'},
-        {finished: false, what:'수제 도시락 만들기'},
-        {finished: true, what:'여행 예약'},
+        {finished: false, what: '도서 읽기'},
+        {finished: true, what: '이웃 돕기'},
+        {finished: false, what: '학원 등록'},
+        {finished: true, what: '영어 스터디 모임'},
+        {finished: false, what: '수제 도식락 만들기'},
+        {finished: true, what: '일본 여행 예약'},
       ]
 
     },
 
-    // data의 속성에 의존하기 때문에 data에서 쓴 속성 이름을 쓰면 오류
     computed: {
       finished_todos(){
         return this.todos.filter(doit=>doit.finished);
@@ -106,15 +105,12 @@
           this.plan = Object.values(data);
         });
       },
-      // Firebase DB 통신으로 새로운 플랜 추가하기
       postFirebasePlanData(item){
         $.post(firebase_db, JSON.stringify(item))
-          .then(data => {console.log(data);
-          // POST 통신이 성공하게 되면, 다시 GET 통신
+          .then(data => {
             this.getFirebasePlanData();
             this.is_transfer = false;
             this.is_blank = true;
-          // this === 상위 컨텍스트 객체 (Arrow function안에서의 this이기 때문)
           });
       },
       excludeMember(i,n){
@@ -134,12 +130,12 @@
           it: _this.plan_it,
           done: false
         };
-        // _this.plan.push(new_plan_it);
         this.is_transfer = true;
-        this.new_plan_it = '';
+        this.plan_it = '';
         this.postFirebasePlanData(new_plan_it);
       }
     }
+
   });
 
 })(window);

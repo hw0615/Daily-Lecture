@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+html(lang="ko-KR")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title 계산된 속성 - Vue.js 프레임워크
+
+    link(rel="shortcut icon" type="image/x-icon" href="assets/favicon.png")
+    link(rel="stylesheet" href="css/main.css")
+
+  body
+
+    .app.container(v-cloak)
+      .columns
+        .column.is-8.is-offset-2
+          form.form
+            .field
+              label.label(for="search") 영화 검색
+              p.control.has-icons-left
+                input.input(
+                  id="search"
+                  type="seach"
+                  placeholder="영화 이름"
+                  @input="inputChangeSearch"
+                  :value="search"
+                )
+                span.icon.is-small.is-left
+                  i.fa.fa-video-camera
+
+          hr
+
+          ul.movies
+            //- li.box.movie(v-for="movie in movies") {{ movie }}
+            li.box.movie(v-for="movie in searched_movie") {{ movie }}
+          //- tr(v-if="inputChangeSearch !== searched_movie ")
+          //-   td
+          //-     p.box.has-text-centered 입력한 
+          //-       strong "{{ search }}" 
+          //-       | 정보를 찾을 수 없습니다.
+
+
+    script(src="lib/jquery.min.js")
+    script(src="lib/vue.js")
+    script(src="js/search_movies.js")
+
+

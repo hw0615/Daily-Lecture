@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+html(lang="ko-KR")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title 계산된 속성 - Vue.js 프레임워크
+
+    link(rel="shortcut icon" type="image/x-icon" href="assets/favicon.png")
+    link(rel="stylesheet" href="css/main.css")
+
+  body
+
+    img.full-img(src="./assets/one-piece-alabasta.png", alt="원피스")
+
+    .app.container
+      .columns
+        .column
+          form.form
+            label.label.a11y-hidden(for="search") 콘텐츠 검색
+            .field
+              .control.has-icons-left
+                input.input(
+                  id="search"
+                  type="search"
+                  placeholder="밀짚모자 해적단 정보를 입력해주세요"
+                  @input="inputChangeSearch"
+                  :value="search"
+                )
+                span.icon.is-small.is-left
+                  i.fa.fa-search
+
+          hr
+          table.table.one-piece
+            col(width="10%")
+            col(width="7%")
+            col(width="8%")
+            col(width="10%")
+            col(width="11%")
+            col(width="10%")
+            col(width="10%")
+            col(width="12%")
+            col(width="40%")
+            caption.a11y-hidden 원피스 해적단
+            thead
+              tr
+                th(scope="col" v-for="key in one_piece_keys") 
+                  button.table-heading-btn(
+                    :aria-label="toggleLabel(key)"
+                    @click="sortBy(key)"
+                    )
+                    span.icon.is-small
+                      i.fa(
+                        aria-hidden="true"
+                        :class="toggleClass(key)"
+                        )
+                  | {{ readableContent(key) }}
+            tbody
+              //- tr(v-for="member in one_piece")
+              tr(v-for="member in filtered_one_piece")
+                td(v-for="(value,key) in member") 
+                  div.member-info(v-if="key !== 'image' && key !== 'bio'") {{ value }}
+                  div.member-info(v-else-if="key === 'bio'" :title="value") {{ ellipseContent(value, 92) }}
+                  div.member-info(v-else) 
+                    img(
+                      :src="`./assets/${value}_tm.jpg`"
+                      :alt="member.name"
+                      :title="member.shortname"
+                    )
+              tr(v-if="filtered_one_piece.length === 0")
+                td(:colspan="one_piece_keys.length")
+                  p.box.has-text-centered 입력한 
+                    strong "{{ search }}" 
+                    | 정보를 찾을 수 없습니다.
+
+    script(src="lib/jquery.min.js")
+    script(src="lib/vue.js")
+    script(src="js/one-piece.js")
+    script(src="js/onepiece.js")

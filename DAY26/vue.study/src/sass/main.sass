@@ -16,8 +16,19 @@ body
 img, video
   vertical-align: top
 
-[v-cloak]
+[v-cloak],
+.hide
   display: none
+
+.a11y-hidden
+  position: absolute
+  top: -5000em
+  left: -5000em
+  width: 1px
+  height: 1px
+  margin: -1px
+  overflow: hidden
 
 .project-team
   margin-top: 60px
+  min-height: 100vh
