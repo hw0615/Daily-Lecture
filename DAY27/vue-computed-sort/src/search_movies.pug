@@ -34,8 +34,8 @@ html(lang="ko-KR")
           ul.movies
             //- li.box.movie(v-for="movie in movies") {{ movie }}
             li.box.movie(v-for="movie in searched_movie") {{ movie }}
-          //- tr(v-if="inputChangeSearch !== searched_movie ")
-          //-   td
+          //- tr(v-if=" movies_list.length === 0  ")
+          //-   td(:colspan="movies.length")
           //-     p.box.has-text-centered 입력한 
           //-       strong "{{ search }}" 
           //-       | 정보를 찾을 수 없습니다.

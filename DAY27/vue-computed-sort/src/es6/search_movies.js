@@ -56,8 +56,14 @@
         //     return movie;
         //   }
         // }, this);
-        
-      }
+      
+      },
+
+      // movies_list(){
+      //   if ( search ){
+      //     this.movies.some(movie=>movie.includes(this.search));
+      //   }
+      // }
     },
 
     // 메서드
